@@ -1,0 +1,256 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "Depuração do idioma TOTVS",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:\\TOTVS12133\\Protheus\\Protheus\\bin\\smartclient\\smartclient.exe",
+			"isMultiSession": true,
+			"enableTableSync": true,
+			"enableMultiThread": true
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "u_calcimc"
+		},
+		{
+			"label": "U_OBJARRAY"
+		},
+		{
+			"label": "u_dowhile"
+		},
+		{
+			"label": "u_zminiform"
+		},
+		{
+			"args": [],
+			"label": "u_AEXP002"
+		},
+		{
+			"label": "u_AEXP001"
+		},
+		{
+			"args": [],
+			"label": "u_teste"
+		},
+		{
+			"label": "u_tela01"
+		},
+		{
+			"args": [],
+			"label": "u_zMiniForm"
+		},
+		{
+			"label": "SIGAFAT"
+		},
+		{
+			"args": [
+				"zMiniForm"
+			],
+			"label": "u_"
+		},
+		{
+			"label": "U_ADIVINHA"
+		},
+		{
+			"label": "U_USERFORM"
+		},
+		{
+			"args": [],
+			"label": "u_tela001"
+		},
+		{
+			"label": "u_useform"
+		},
+		{
+			"label": "u_calculo"
+		},
+		{
+			"label": "U_GATILHO"
+		},
+		{
+			"label": "u_TCESTF001"
+		},
+		{
+			"label": "sigaadv"
+		},
+		{
+			"label": "sigamdi"
+		},
+		{
+			"label": "SIGAEST"
+		},
+		{
+			"args": [],
+			"label": "u_TCESTF001"
+		},
+		{
+			"args": [],
+			"label": "CALCIMC"
+		},
+		{
+			"label": "u_DECLVAR"
+		},
+		{
+			"label": "U_ESCOPO"
+		},
+		{
+			"label": "u_der"
+		},
+		{
+			"args": [],
+			"label": "u_der"
+		},
+		{
+			"label": "4"
+		},
+		{
+			"label": "u_TESTEVAR"
+		},
+		{
+			"label": "u_numericas"
+		},
+		{
+			"label": "u_decisao"
+		},
+		{
+			"label": "u_ABRESZ1"
+		},
+		{
+			"label": "u_Decisao2"
+		},
+		{
+			"label": "u_bloco"
+		},
+		{
+			"label": "u_diretiva"
+		},
+		{
+			"args": [],
+			"label": "u_abre"
+		},
+		{
+			"args": [],
+			"label": "u_abre1"
+		},
+		{
+			"label": "u_abre1"
+		},
+		{
+			"label": "u_manipul"
+		},
+		{
+			"label": "u_parametro"
+		},
+		{
+			"label": "u_transacao"
+		},
+		{
+			"args": [],
+			"label": "SIGAFAT"
+		},
+		{
+			"label": "SIGAFAT"
+		},
+		{
+			"args": [],
+			"label": "u_TESTAFUNC"
+		},
+		{
+			"args": [],
+			"label": "u_UserForm"
+		},
+		{
+			"args": [],
+			"label": "u_erro"
+		},
+		{
+			"label": "u_erro"
+		},
+		{
+			"label": "U_VERERROS"
+		},
+		{
+			"args": [],
+			"label": "u_set"
+		},
+		{
+			"label": "u_set"
+		},
+		{
+			"args": [],
+			"label": "U_AQuery"
+		},
+		{
+			"label": "u_tPrepStat"
+		},
+		{
+			"label": "U_MOD1_MVC"
+		},
+		{
+			"args": [],
+			"label": "U_MOD1_MVC"
+		},
+		{
+			"label": "U_MPSmybind"
+		},
+		{
+			"label": "XXX"
+		},
+		{
+			"args": [],
+			"label": "MT120ISC"
+		},
+		{
+			"label": "u_MT120ISC"
+		},
+		{
+			"args": [
+				"MkBrwSz1"
+			],
+			"label": "u_"
+		},
+		{
+			"args": [],
+			"label": "u_AbreMark"
+		},
+		{
+			"label": "u_MkBrwSz1"
+		},
+		{
+			"label": "u_TstMacro"
+		},
+		{
+			"label": "u_abres1"
+		},
+		{
+			"label": "u_Bcod"
+		},
+		{
+			"label": "u_TstBloco"
+		},
+		{
+			"label": "u_TstBloc3"
+		},
+		{
+			"args": [
+				"Function TstBloc4"
+			],
+			"label": "u_User"
+		},
+		{
+			"label": "u_TstBloc4"
+		},
+		{
+			"label": "sigafis"
+		},
+		{
+			"label": "sigaesp"
+		}
+	],
+	"lastProgramExecuted": "sigaesp"
+}

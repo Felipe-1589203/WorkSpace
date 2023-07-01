@@ -1,0 +1,262 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>FICHA TÉCNICA</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="87%">
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="13%" rowspan="3">
+                <p align="center"><img border="0" src="http://www.multlock.com.br/imagens/elem/mult_home.jpg" width="70" height="97"></p>
+              </td>
+              <td width="73%" rowspan="3">
+                <p style="text-align: center; line-height: 150%; margin-top: 0; margin-bottom: 0" class="MsoNormal" align="center"><font face="Calibri">DEPARTAMENTO
+                DE PLANEJAMENTO DA PRODUÇÃO&nbsp;</font></p>
+                <p style="text-align: center; line-height: 150%; margin-top: 0; margin-bottom: 0" class="MsoNormal" align="center"><font face="Calibri">ESPECIFICAÇÃO
+                TÉCNICA DE PORTA</font></p>
+              </td>
+              <td width="14%">&nbsp;<font face="Calibri">Data:
+                '+dtoC(SC5->C5_EMISSAO)+'</font></td>
+            </tr>
+            <tr>
+              <td width="14%">&nbsp;<font face="Calibri">Pedido: 00000 - 00</font></td>
+            </tr>
+            <tr>
+              <td width="14%"><font face="Calibri">N° Série: 9999999999</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%"></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <p align="center"><font face="Calibri"><b>ESPECIFICAÇÕES TÉCNICAS DO
+        CONJUNTO</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%"></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="13%"><font face="Calibri" size="2">&nbsp;Cliente:</font></td>
+              <td width="87%" colspan="3"><font face="Calibri">&nbsp;<font size="2">' + SC5->C5_CLIENTE + ' - ' + SC5->C5_LOJACLI + ' - ' + GetAdvFval('SA1', 'A1_NOME',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'XX') + '</font></font></td>
+            </tr>
+            <tr>
+              <td width="13%"><font face="Calibri" size="2">&nbsp;Endereço:</font></td>
+              <td width="56%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SA1', 'A1_END',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'XX') + ' ' + Iif(GetAdvFval('SA1', 'A1_XNUM',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'')<>'', ", " + GetAdvFval('SA1', 'A1_XNUM',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'99'), '') + '</font></td>
+              <td width="16%"><font face="Calibri" size="2">&nbsp;Estado:</font></td>
+              <td width="15%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SA1', 'A1_EST',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'XX') + '</font></td>
+            </tr>
+            <tr>
+              <td width="13%"><font face="Calibri" size="2">&nbsp;Bairro:</font></td>
+              <td width="56%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SA1', 'A1_BAIRRO',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'XX') + '</font></td>
+              <td width="16%"><font face="Calibri" size="2">&nbsp;CEP:</font></td>
+              <td width="15%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SA1', 'A1_CEP',xFilial('SA1')+SC5->(C5_CLIENTE+C5_LOJACLI),1,'XX') + '</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="87%">&nbsp;<font face="Calibri" size="2"><b>1.1 Modelo e Tamanho:</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="16%"><font face="Calibri" size="2">&nbsp;Modelo:</font></td>
+              <td width="16%"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_MODELO+'</font></td>
+              <td width="68%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_MODELO,1,'XX') + '</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <font face="Calibri" size="2">&nbsp;</font>
+      </td>
+    </tr>
+   <tr>
+     <td width="87%">
+       <div align="center">
+         <table border="1" cellpadding="0" cellspacing="0" width="100%">
+           <tr>
+             <td width="16%"><font face="Calibri">&nbsp;<font size="2">Altura:</font></font></td>
+             <td width="27%"><font face="Calibri" size="2">&nbsp;'+TRANSFORM(SZ0->Z0_ALTURA ,'@E 999,999,999')+'</font></td>
+             <td width="57%"><font face="Calibri"><b>*** ATENÇÃO: ALTURA
+               FORA DO PADRÃO ***</b></font></td>
+           </tr>
+         </table>
+       </div>
+     </td>
+   </tr>
+
+    <tr>
+      <td width="87%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="87%"><font face="Calibri" size="2">&nbsp;<b>1.2 Acabamento:</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Modelo MTL Int.:</font></td>
+              <td width="14%"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_MODINT+'</font></td>
+              <td width="68%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_MODINT,1,'XX') + '</font></td>
+            </tr>
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Modelo MTL Ext.:</font></td>
+              <td width="14%"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_MODEXT+'</font></td>
+              <td width="68%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_MODEXT,1,'XX') + '</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="87%"><font face="Calibri" size="2">&nbsp;<b>1.3 Acessórios:</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="101%" height="134">
+            <tr>
+              <td width="18%" height="15"><font face="Calibri" size="2">&nbsp;Kit Abertura:</font></td>
+              <td width="14%" height="15"><font face="Calibri" size="2">&nbsp;'+c_kitabpf+'</font></td>
+              <td width="68%" height="15" colspan="4"><font face="Calibri" size="2">&nbsp;'+c_desckta+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%" height="15"><font face="Calibri" size="2">&nbsp;Mola Aérea:</font></td>
+              <td width="14%" height="15"><font face="Calibri" size="2">&nbsp;'+c_molaaer+'</font></td>
+              <td width="68%" height="15" colspan="4"><font face="Calibri" size="2">&nbsp;'+c_descmla+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%" height="15"><font face="Calibri" size="2">&nbsp;Fech. Adicional:</font></td>
+              <td width="14%" height="15"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_FECHAD+'</font></td>
+              <td width="36%" height="15"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_FECHAD,1,'XX') + '&nbsp;</font></td>
+              <td width="1%" height="15" colspan="2"><font face="Calibri" size="2">&nbsp;</font><font face="Calibri" size="2">Altura:</font></td>
+              <td width="32%" height="15"><font face="Calibri" size="2">'+Transform(SZ0-&gt;Z0_ALTFECH, "@E
+                999,999&quot;)+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%" height="15"><font face="Calibri" size="2">&nbsp;Olho Mágico:</font></td>
+              <td width="14%" height="15"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_OLHOM+'</font></td>
+              <td width="36%" height="15" colspan="2"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_OLHOM,1,'XX') + '</font></td>
+              <td width="11%" height="15"><font face="Calibri" size="2">Altura:</font></td>
+              <td width="21%" height="15"><font face="Calibri" size="2">&nbsp;'+Transform(SZ0-&gt;Z0_ALTOLHO, "@E
+                999,999&quot;)+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%" height="13"><font face="Calibri" size="2">&nbsp;Parada Porta:</font></td>
+              <td width="14%" height="13"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_PARADAP+'</font></td>
+              <td width="68%" height="13" colspan="4"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_PARADAP,1,'XX') + '</font></td>
+            </tr>
+            <tr>
+              <td width="18%" height="15"><font face="Calibri" size="2">&nbsp;Capa Dobradiça:</font></td>
+              <td width="14%" height="15"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_CAPADOB+'</font></td>
+              <td width="68%" height="15" colspan="4"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_CAPADOB,1,'XX') + '</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="87%"><font face="Calibri" size="2"><b>&nbsp;1.4 Ferragens:</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Ferragem:</font></td>
+              <td width="14%"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_FERRINT+'</font></td>
+              <td width="68%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_FERRINT,1,'XX') + '</font></td>
+            </tr>
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Mestragem:</font></td>
+              <td width="82%" colspan="2"><font face="Calibri" size="2">&nbsp;'+Iif(SZ0->Z0_SERVICO = 'M', 'MASTERKEY', IIF(SZ0->Z0_SERVICO = 'U', 'UNIFICAÇÃO', Iif(SZ0->Z0_SERVICO = 'E', '2X1', Iif(SZ0->Z0_SERVICO = 'F', '3X1', Iif(SZ0->Z0_SERVICO = 'G', '4X1', Iif(SZ0->Z0_SERVICO = 'H', 'COPIA CHAVE', "NENHUM"))))))+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Observações:</font> </td>
+              <td width="82%" colspan="2"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_DESCSER+'</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="87%"><font face="Calibri" size="2">&nbsp;<b>1.5 Batente:</b></font></td>
+    </tr>
+    <tr>
+      <td width="87%">
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Batente:</font> </td>
+              <td width="15%"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_BATENTE+'</font></td>
+              <td width="67%"><font face="Calibri" size="2">&nbsp;' + GetAdvFval('SB1','B1_DESC', xFilial('SB1')+SZ0->Z0_BATENTE,1,'XX') + '</font></td>
+            </tr>
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Fech. Elétrica:</font>
+              </td>
+              <td width="15%"><font face="Calibri" size="2">&nbsp;'+c_FechElt+'</font></td>
+              <td width="67%"><font face="Calibri" size="2">&nbsp;'+c_descfhe+'</font></td>
+            </tr>
+            <tr>
+              <td width="18%"><font face="Calibri" size="2">&nbsp;Observações:</font> </td>
+              <td width="82%" colspan="2"><font face="Calibri" size="2">&nbsp;'+SZ0->Z0_OBSBAT+'</font></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="87%"></td>
+    </tr>
+    <tr>
+      <td width="87%"></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

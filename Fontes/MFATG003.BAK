@@ -1,0 +1,40 @@
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÉÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍ»±±
+±±ºPrograma  ³MFATG003  ºAutor  ³Cintia Aquino       º Data ³  07/10/09   º±±
+±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
+±±ºDesc.     ³Gatilho no digitacao do armazem no pedido de vendas para    º±±
+±±º          ³digitar armazem 77                                          º±±
+±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
+±±ºUso       ³Especifico MUL-T-LOCK                                       º±±
+±±ÈÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
+
+User Function MFATG003()
+                                                                   
+Local l_Ret	  := .T.                                                                        
+Local n_x     := 0
+Local n_posTES:= aScan(aHeader,{|x| AllTrim(x[2])=="C6_TES"})
+Local c_Ret := ''
+
+c_Ret := aCols[n, n_posTES]
+
+If Alltrim(FunName()) == "MATA410"
+	
+	If M->C5_TIPO = 'N'
+		If M->C5_XORIGEM == 'A' .and. M->C5_TIPOCLI <> 'S'
+			For n_x := 1 to len(aCols)
+				If aCols[n_x,Len(aHeader)+1] == .F. 
+					If aCols[n_x, n_posTES] == '501'
+						msgalert("Ao Utilizar o Tes 501, o tipo de cliente no PV tem que ser Solidario. Verifique o item "+aCols[n_x, 1], "A T E N Ç Ã O")
+						l_Ret := .F.
+					    Exit
+					EndIf                                                     
+				EndIf                                      
+			Next
+		Endif
+	Endif	
+EndIf
+
+Return c_Ret   

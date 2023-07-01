@@ -1,0 +1,440 @@
+#INCLUDE "Protheus.ch"
+#INCLUDE "TopConn.ch"
+#INCLUDE "Rwmake.ch"
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ MPCPA002  ณ WorkArea de MRP                                              บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+User Function MPCPA002()
+
+Local cPerg := "MPCPR001"
+
+lPerg := Pergunte(cPerg)
+
+If lPerg == .T.
+	Processa({|| A002GERA() },"WorkArea MRP")
+EndIf
+
+Return()
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ MPCPA002  ณ WorkArea de MRP - Geracao dos processos                      บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+Static Function A002GERA()
+
+Local _n1
+Local _oDlg
+Local oFolder
+Local oButDemP,oButDemM,oButDemI,oButDemE,oButDemX
+Local oButProP,oButProM,oButProI,oButProE
+Local cQuery    := ""
+Local cAliasA   := ""
+Local nOpca     := 0
+Local cMarArea  := GetMark()
+Local lInverte  := .F.
+Local _aStruct  := {}
+
+Private aFolder := {"Demanda  ","Produ็ใo"}
+Private oMarkD  := Nil
+Private oMarkP  := Nil
+Private oOk     := ""
+Private oNo	    := ""
+Private aSize   := MsAdvSize( .F. )
+Private _aCpoDEM:= {}
+Private _aCpoPRO:= {}                                             
+Private cArqTMP := ""
+Private cArqTRB := ""
+
+// **************** D E M A N D A
+U_MPCPR001(3)
+
+U_A002DEMA()
+
+// **************** P R O D U C A O
+U_A002PROD()
+
+// **************** I N T E R F A C E
+Define MsDialog _oDlg Title " Rotinas de MRP " From C(aSize[1]),C(aSize[1]) TO C(aSize[4]),C(aSize[6]) Pixel
+
+oFolder:= TFolder():New(C(aSize[1]+10), C(aSize[1]+3),aFolder,{},_oDlg,,,,.T.,.F.,C(aSize[4]+55),C(aSize[7]+27),)
+
+// *********** Folder Demanda
+@ C(aSize[1]+2), C(aSize[1]+2) TO C(aSize[1]+15),C(aSize[4]+53) LABEL "" Pixel Of oFolder:aDialogs[1]
+
+@ C(aSize[1]+04),C(aSize[6]-095) BTNBMP oButDemM Resource "S4WB014B" SIZE C(028),C(030) Pixel Of oFolder:aDialogs[1] Message "Gerar Plano Mestre Prod."      Action( _aReaSZO := SZO->(GetArea()), U_A002MEST(), RestArea(_aReaSZO), U_A002PROD(), oMarkP:oBrowse:Refresh() )
+@ C(aSize[1]+04),C(aSize[6]-070) BTNBMP oButDemI Resource "S4WB010N" SIZE C(030),C(030) Pixel Of oFolder:aDialogs[1] Message "Relat๓rio de Demanda"          Action( U_MPCPR001(1) )
+@ C(aSize[1]+04),C(aSize[6]-045) BTNBMP oButDemE Resource "PMSEXCEL" SIZE C(030),C(030) Pixel Of oFolder:aDialogs[1] Message "Exporta Demanda para Excel  "  Action( U_MPCPR001(2) )
+
+oMarkD 						:= MsSelect():New(	"TRB", "TRB_OK" , "" , _aCpoDEM , @lInverte, @cMarArea ,{ C(aSize[1]+18),C(aSize[1]+3),C(aSize[7]+17),C(aSize[4]+52) },,, oFolder:aDialogs[1])
+oMarkD:bAval               	:= {|| ( A002MARK(1,cMarArea,oMarkD,"TRB","TRB_OK") , oMarkD:oBrowse:Refresh() ) }
+oMarkD:oBrowse:lhasMark    	:= .T.
+oMarkD:oBrowse:lCanAllmark 	:= .F.
+oMarkD:oBrowse:bAllMark   	:= {|| ( A002MARK(2,cMarArea,oMarkD,"TRB","TRB_OK") , oMarkD:oBrowse:Refresh() ) }
+
+// *********** Folder Producao
+@ C(aSize[1]+2), C(aSize[1]+2) TO C(aSize[1]+15),C(aSize[4]+53) LABEL "" Pixel Of oFolder:aDialogs[2]
+
+@ C(aSize[1]+04),C(aSize[6]-115) BTNBMP oButDemX Resource "EXCLUIR"  SIZE C(030),C(030) Pixel Of oFolder:aDialogs[2] Message "Excluir Plano Mestre"         Action( U_A002EXCL() )
+@ C(aSize[1]+04),C(aSize[6]-095) BTNBMP oButDemM Resource "PRODUTO"  SIZE C(030),C(030) Pixel Of oFolder:aDialogs[2] Message "Manuten็ใo Plano Mestre "     Action( _aReaSZO := SZO->(GetArea()), U_MPCPA001 (), RestArea(_aReaSZO), U_A002PROD(),  oMarkP:oBrowse:Refresh() )
+@ C(aSize[1]+04),C(aSize[6]-070) BTNBMP oButDemI Resource "S4WB010N" SIZE C(030),C(030) Pixel Of oFolder:aDialogs[2] Message "Previsao de Produ็ใo"         Action( U_MPCPR003(1) )
+//@ C(aSize[1]+04),C(aSize[6]-045) BTNBMP oButDemE Resource "PMSEXCEL" SIZE C	(030),C(030) Pixel Of oFolder:aDialogs[2] Message "Exporta Previsใo para Excel"  Action( U_MPCPR003(2) )
+
+oMarkP 						:= MsSelect():New(	"TMP", "TMP_OK" , "" , _aCpoPRO , @lInverte, @cMarArea ,{ C(aSize[1]+18),C(aSize[1]+3),C(aSize[7]+17),C(aSize[4]+52) },,, oFolder:aDialogs[2])
+oMarkP:bAval               	:= {|| ( A002MARK(1,cMarArea,oMarkP,"TMP","TMP_OK") , oMarkP:oBrowse:Refresh() ) }
+oMarkP:oBrowse:lhasMark    	:= .T.
+oMarkP:oBrowse:lCanAllmark 	:= .F.
+oMarkP:oBrowse:bAllMark   	:= {|| ( A002MARK(2,cMarArea,oMarkP,"TMP","TMP_OK") , oMarkP:oBrowse:Refresh() ) }
+
+Activate MsDialog _oDlg Centered On Init EnchoiceBar(_oDlg, { || nOpca:=1,_oDlg:End()}, { || nOpca:=0,_oDlg:End()})
+
+TMP->( DbCloseArea())
+FErase(cArqTMP+OrdBagExt())
+FErase(cArqTMP+GetDbExtension())
+
+TRB->( DbCloseArea())
+FErase(cArqTRB+OrdBagExt())
+FErase(cArqTRB+GetDbExtension())
+
+Return()
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ A002DEMA  ณ Seleciona itens e gera Temporario de demanda                 บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+User Function A002DEMA()
+
+Local _n1
+Local aStrTRB  := {}
+Local nTotdias := 0
+Local nNumInd  := 0
+
+If Select("TRB") > 0
+	TRB->( DbGoTop() )
+	aStrTRB  := TRB->(DbStruct())
+	_aCpoDEM := {}
+	
+	For _n1 := 1 to Len(aStrTRB)
+		_cCampo  := aStrTRB[_n1,1]
+		
+		If AllTrim(aStrTRB[_n1,1]) == "TRB_OK"
+			aAdd(_aCpoDEM  ,{"TRB_OK",,"", "@BMP"})
+		Else
+			If AllTrim(aStrTRB[_n1,1]) == "SLDISPO"
+				_cCampo := "B2_QATU"
+				_cTitulo:= "Saldo Disponivel"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "SALDO"
+				_cCampo := "B2_QATU"
+				_cTitulo:= "Estoque Atual"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "RESERVA"
+				_cCampo := "B2_RESERVA"
+				_cTitulo:= "Qtde Reservada"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "SALDO_PV"
+				_cCampo := "C6_QTDVEN"
+				_cTitulo:= "Ped.Venda Carteira"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "SALDO_OP"
+				_cCampo := "C2_QUANT"
+				_cTitulo:= "OP em Processo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "EMP_SLD"
+				_cCampo := "D4_QUANT"
+				_cTitulo:= "Empenhos em processo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "SALDO_SC"
+				_cCampo := "C1_QUANT"
+				_cTitulo:= "SC em Processo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "SALDO_PC"
+				_cCampo := "C7_QUANT"
+				_cTitulo:= "PC em Processo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "QUANT_CONS"
+				_cCampo := "D2_QUANT"
+				_cTitulo:= "Consumo do Periodo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "MEDIA"
+				_cCampo := "D2_QUANT"
+				_cTitulo:= "Media de consumo"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "NECESS"
+				_cCampo := "D2_QUANT"
+				_cTitulo:= "Necessidade de Producao"
+				
+			ElseIf AllTrim(aStrTRB[_n1,1]) == "NECBRU"
+				_cCampo := "D2_QUANT"
+				_cTitulo:= "Necessidade Bruta"
+				
+			Else
+				_cTitulo := RetTitle(_cCampo)
+			EndIf
+			
+			aAdd(_aCpoDEM  ,{aStrTRB[_n1,1],, _cTitulo , PesqPict( &("'S"+Left(_cCampo,2)+"'"), _cCampo )   })
+		EndIf
+	Next _n1
+EndIf
+
+Return()
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ A002PROD  ณ Seleciona itens e gera Temporario de Plano mestre de producaoบฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+User Function A002PROD()
+
+Local _n1
+
+If Select("TMP") == 0
+	// ************************ Apaga itens com data vencida no Plano Mestre de Producao
+	cQuery := "SELECT SZO.*
+	cQuery += "  FROM "+ RetSQLName( 'SZO' ) +" AS SZO"
+	cQuery += " WHERE SZO.ZO_DATA    < '"+ Dtos(dDataBase) +"'"
+	cQuery += "   AND SZO.D_E_L_E_T_ = ' ' "
+	TCSQLEXEC(cQuery)
+Else
+	DbSelectArea("TMP")
+	TMP->(DbCloseArea())
+EndIf
+SZO->(DbSetOrder(2))
+
+// ************************ Seleciona dados do Plano Mestre de Producao
+cQuery := "SELECT '"+ Space(02) +"' TMP_OK, SZO.ZO_PRODUTO, SZO.ZO_QUANT, SZO.ZO_DATA"
+cQuery += "  FROM "+ RetSQLName( 'SZO' ) +" AS SZO"
+cQuery += " WHERE SZO.D_E_L_E_T_ = ' ' "
+cQuery += " ORDER BY SZO.ZO_PRODUTO
+
+cAliasB	:= GetNextAlias()
+cQuery  := ChangeQuery(cQuery)
+
+DbUseArea( .T., 'TOPCONN', TCGENQRY(,,cQuery), cAliasB , .F., .T.)
+aEval( SZO->(dbStruct()),{|x| If(x[2]!="C", TcSetField(cAliasB,AllTrim(x[1]),x[2],x[3],x[4]),Nil)})
+
+// ************************ Monta arquivo temporario para Browse da Producao
+_aStruct := (cAliasB)->(DbStruct())
+cArqTMP  := CriaTrab( _aStruct )
+DbUseArea( .T.,__LocalDriver, cArqTMP, "TMP", .T. , .F. )
+IndRegua("TMP" , cArqTMP, "ZO_PRODUTO" ,,,"Criando Indice..." )
+
+DbSelectArea("TMP")
+Append From &cAliasB
+( cAliasB )->( DbCloseArea())
+
+DbSelectArea( "TMP" )
+TMP->( DbGoTop() )
+
+// ************************ Cria array de Campos do Browse da Producao
+_aCpoPRO := {}
+For _n1 := 1 to Len(_aStruct)
+	_cCampo := _aStruct[_n1,1]
+	
+	If AllTrim(_aStruct[_n1,1]) == "TMP_OK"
+		aAdd(_aCpoPRO  ,{"TMP_OK",,"", "@BMP"})
+	Else
+		If Left(_aStruct[_n1,1],2) == "ZO"
+			aAdd(_aCpoPRO  ,{_aStruct[_n1,1],, RetTitle(_cCampo), PesqPict( &("'S"+Left(_cCampo,2)+"'"), _cCampo )   })
+		EndIf
+	EndIf
+Next _n1
+
+Return()
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ A002MARK  ณ Marca/Desmarca apenas 1 item do MarkBrowse                   บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  02/04/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+Static Function A002MARK(nTipo,cMarArea,oMark,_cAlias,_cCpo)
+
+Local nReg := (_cAlias)->(Recno())
+
+If nTipo == 1
+	RecLock(_cAlias, .F.)
+	If Empty((_cAlias)->&_cCpo)
+		(_cAlias)->&_cCpo := cMarArea
+	Else
+		(_cAlias)->&_cCpo := ""
+	EndIf
+	MsUnlock()
+Else
+	(_cAlias)->(DbGoTop())
+	While (_cAlias)->(!Eof())
+		RecLock((_cAlias), .F.)
+		If Empty((_cAlias)->&_cCpo)
+			(_cAlias)->&_cCpo := cMarArea
+		Else
+			(_cAlias)->&_cCpo := ""
+		EndIf
+		MsUnlock()
+		(_cAlias)->(DbSkip())
+	End-While
+Endif
+
+(_cAlias)->(DbGoTo(nReg))
+oMark:oBrowse:Refresh(.T.)
+
+Return Nil
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ A002MEST  ณ WorkArea de MRP - Geracao dos dados na SZO                   บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+User Function A002MEST()
+
+Local aAreaSZO  := SZO->(GetArea())
+Local _nRecTRB  := TRB->(Recno())
+Local nConTRB   := 0
+
+TRB->(DbGoTop())
+While TRB->(!Eof())
+	If !Empty(TRB->TRB_OK)
+		If TRB->NECESS < 0
+			nConTRB++
+			SZO->(DbSetOrder(2))
+			If SZO->(DbSeek( xFilial("SZO") + TRB->B2_COD ))
+				RecLock("SZO", .F.)
+				SZO->ZO_DATA    := dDataBase+30
+				SZO->(MsUnlock())
+			Else
+				RecLock("SZO", .T.)
+				SZO->ZO_FILIAL  := xFilial("SZO")
+				SZO->ZO_PRODUTO := TRB->B2_COD
+				SZO->ZO_QUANT   := (TRB->NECESS * Iif(TRB->NECESS < 0, -1, 1))
+				SZO->ZO_DATA    := dDataBase+30
+				SZO->(MsUnlock())
+			EndIf
+		EndIf
+	EndIf
+	
+	TRB->(DbSkip())
+End-While
+TRB->(DbGoTo(_nRecTRB))
+
+If nConTRB == 0
+	Aviso("Plano Mestre de Produ็ใo","Nใo foi selecionado nenhum item para gera็ใo",{"&Abandonar"},,"Selecionar" )
+Else
+	Aviso("Plano Mestre de Produ็ใo","A rotina gerou "+StrZero(nConTRB,10)+" itens, aglutinando aos existentes!",{"&Sair"},,"Produ็ใo" )
+EndIf
+
+Return()
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออปฑฑ
+ฑฑบ                              M U L T  -  T  -  L O C K                                บฑฑ
+ฑฑฬออออออออออออัอออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบPrograma    ณ A002EXCLU ณ Exclui itens do Plano mestre de producao                     บฑฑ
+ฑฑฬออออออออออออุอออออออออออฯอออออออออออออออออออออออออออออออออออออออออออัออออออัอออออออออออนฑฑ
+ฑฑบAutor       ณ Actual Trend                                          ณ Data ณ  31/03/10 บฑฑ
+ฑฑศออออออออออออฯอออออออออออออออออออออออออออออออออออออออออออออออออออออออฯออออออฯอออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+
+User Function A002EXCLU()
+
+Local aAreaSZO  := SZO->(GetArea())
+Local _nRecTMP  := TMP->(Recno())
+
+If MsgYesNo("Deseja Excluir itens selecionados?")
+	TMP->(DbGoTop())
+	While TMP->(!Eof())
+		If !Empty(TMP->TMP_OK)
+			SZO->(DbSetOrder(2))
+			If SZO->(DbSeek( xFilial("SZO") + TMP->ZO_PRODUTO))
+				RecLock("SZO", .F.)
+				SZO->(DbDelete())
+				SZO->(MsUnlock())
+			EndIf
+		EndIf
+		
+		TMP->(DbSkip())
+	End-While
+EndIf
+TMP->(DbGoTo(_nRecTMP))
+
+U_A002PROD()
+
+Return()
+
+
+/*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑฺฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฟฑฑ
+ฑฑณPrograma   ณ   C()   ณ Autores ณ Norbert/Ernani/Mansano ณ Data ณ10/05/2005ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณDescricao  ณ Funcao responsavel por manter o Layout independente da       ณฑฑ
+ฑฑณ           ณ resolucao horizontal do Monitor do Usuario.                  ณฑฑ
+ฑฑภฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ                                                              
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿*/
+Static Function C(nTam)
+
+Local nHRes	:=	oMainWnd:nClientWidth	// Resolucao horizontal do monitor
+
+If nHRes == 640	// Resolucao 640x480 (soh o Ocean e o Classic aceitam 640)
+	nTam *= 0.8
+ElseIf (nHRes > 640).And. (nHRes <= 800)	// Resolucao 800x600
+	nTam *= 1	
+Else	// Resolucao 1024x768 e acima
+	nTam *= 1.50
+EndIf
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณTratamento para tema "Flat"ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+If "MP8" $ oApp:cVersion .Or. "P10" $ oApp:cVersion
+	If (Alltrim(GetTheme()) == "FLAT") .Or. (Alltrim(GetTheme()) == "TEMAP10") .Or. SetMdiChild()
+		nTam *= 0.98
+	EndIf
+EndIf
+
+Return Int(nTam)

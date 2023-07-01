@@ -1,0 +1,761 @@
+#include "rwmake.ch"        // incluido pelo assistente de conversao do AP5 IDE em 13/08/01
+#IFNDEF WINDOWS
+  #DEFINE PSAY SAY
+#ENDIF
+
+User Function MFATR007()        // incluido pelo assistente de conversao do AP5 IDE em 13/08/01
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Declaracao de variaveis utilizadas no programa atraves da funcao    ³
+//³ SetPrvt, que criara somente as variaveis definidas pelo usuario,    ³
+//³ identificando as variaveis publicas do sistema utilizadas no codigo ³
+//³ Incluido pelo assistente de conversao do AP5 IDE                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+SetPrvt("TAMANHO,LIMITE,TITULO,CDESC1,CDESC2,CDESC3")
+SetPrvt("ARETURN,NOMEPROG,NLASTKEY,CSTRING,CPERG,WNREL")
+SetPrvt("CBCONT,CBTXT,LI,M_PAG,CABEC1,CABEC2")
+SetPrvt("_NACUMVLR,_NACUMIPI,_NACUMICM,_NACUCMV,_nAcuICMST,_NACUMQTD,LEND,_SQUEBRA")
+SetPrvt("_NTQTDGR,_NTPRCGR,_LIMP,_GUARPB1,_MEDIAPR,_PERCMED,_nMargemB")
+SetPrvt("_PERCFAT,_NTOTQTD,_NTOTCMV,_NTOTPRC,_MAIORPR,_MENORPR,_LFATURA,_nToGCMV")
+SetPrvt("_NFATURATOT,_NVALDEV,SALIAS00,AREGS,I,J")
+SetPrvt("NDIA,AVISTA,DIA15,DIA30,DIA45,DIA60,QNOTA,QDATA")
+SetPrvt("NNOTAA,NNOTA15,NNOTA30,NNOTA45,NNOTA60")
+
+#IFNDEF WINDOWS
+// Movido para o inicio do arquivo pelo assistente de conversao do AP5 IDE em 13/08/01 ==>   #DEFINE PSAY SAY
+#ENDIF
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Programa  ³ LSFTR04  ³ Autor ³ Fernando F. Campos    ³ Data ³ 27/07/99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Estatistica de Produtos Vendidos                           ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Uso       ³ Especifico Lesson Laboratorio Sonico Ltda.                 ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*/
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Define Variaveis                                             ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+tamanho   := "G"
+limite    := 232
+titulo    := PADC("Estatistica de Produtos sem impostos.",74)
+cDesc1    := PADC("Este programa ira executar uma Estatistica de Vendas" ,74)
+cDesc2    := PADC("por Produto." ,74)
+cDesc3    := ""
+aReturn   := { "80 Col", 1,"Administracao", 2, 2, 1, "",1 }
+nomeprog  :="LSFTR04"
+nLastKey  := 0
+cString   :="SD2"
+cPerg     :="LSFR04"
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Verifica as perguntas selecionadas                           ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ValidPerg()
+Pergunte(cPerg,.F.)
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis utilizadas para parametros                         ³
+//³ mv_par01         // Periodo De                               ³
+//³ mv_par02         // Periodo Ate                              ³
+//³ mv_par03         // Produto De                               ³
+//³ mv_par04         // Produto Ate                              ³
+//³ mv_par05         // Nacional    Importacao   Ambos           ³
+//³ mv_par06         // Considera Servico     Sim  Nao           ³
+//³ mv_par07         // Almoxarifado De                          ³
+//³ mv_par08         // Almoxarifado Ate                         ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Envia controle para a funcao SETPRINT                        ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+wnrel:="LSFTR04" // Nome Default do relatorio em Disco
+
+wnrel:=SetPrint(cString,wnrel,cPerg,@titulo,cDesc1,cDesc2,cDesc3,.F.,"",.F.,Tamanho)
+
+If nLastKey == 27
+   Set Filter to
+   Return
+Endif
+
+SetDefault(aReturn,cString)
+
+#IFDEF WINDOWS
+    RptStatus({|| FATR04() },Titulo)// Substituido pelo assistente de conversao do AP5 IDE em 13/08/01 ==>     RptStatus({|| Execute(FATR04) },Titulo)
+    Return
+// Substituido pelo assistente de conversao do AP5 IDE em 13/08/01 ==>     Function FATR04
+Static Function FATR04()
+#ENDIF
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis utilizadas para impressao do cabecalho e rodape    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+cbCont:= 0
+cbTxt:=""
+Li    :=80
+m_pag := 1.1
+cabec1:="Codigo            Descricao                       Quantidade        Total        Maior      Media        Menor      %        %      Vl.Medio  Vl.Medio  Vl.Medio  Vl.Medio  Vl.Medio     C.M.V       Margem      Margem   " 
+cabec2:="                                                                                 Preco      Preco        Preco     Var.     Fat.    ate 14d.  ate 29d.  ate 44d.  ate 59d.  maior 60d.   Periodo     Bruta($)      (%)    "
+//        0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
+//                 10        20        30        40        50        60        70        80        90       100       110       120       130         14        15        16        17        18        19        20        21
+SomaTot()                                                                                                                
+
+DbSelectArea("SB1")
+DbSetOrder(4)
+DbGotop()
+
+SetRegua(Reccount())
+titulo    := "Estatistica de Produtos C/ ICMS - Periodo De "+DTOC(MV_PAR01)+" Ate "+DTOC(MV_PAR02)+" - Mercado "+If(MV_PAR05==1,"Interno",If(MV_PAR05==2,"Externo","Global"))
+
+_nAcumVlr:=0
+_nAcumIPI:=0
+_nAcumICM:=0
+_nAcumQtd:=0
+_nAcuICMST:=0
+_nAcuCMV:=0
+_dEmissao := ddatabase
+_cNF := space(6)
+
+Do While !Eof() 
+   #IFDEF WINDOWS
+       If LastKey() == 286    //ALT_A
+          lEnd := .t.
+       EndIf
+       If lEnd
+          @PROW()+1,001 PSAY "CANCELADO PELO OPERADOR"            
+          Exit
+       Endif
+   #ENDIF
+
+   _sQuebra:=SB1->B1_GRUPO
+   _nTQtdGr:=0
+   _nTPrcGr:=0
+   _nToGCMV:=0
+   _lImp:=.F.
+
+   While !Eof() .And. SB1->B1_GRUPO==_sQuebra
+      If Li>=58
+         Li:=Cabec(titulo,cabec1,cabec2,nomeprog,tamanho,15)
+         Li:=Li+1
+      Endif
+      IncRegua()
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Filtra Parametros                                            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+   //   If MV_PAR06==2
+   //      If !SB1->B1_TIPO$"PA/MR/PI/SE"
+   //         dbSelectArea("SB1")
+   //         dbSkip()
+   //         Loop
+   //      Endif
+   //   Endif
+
+      If SB1->B1_COD<MV_PAR03 .Or. SB1->B1_COD>MV_PAR04
+         dbSelectArea("SB1")
+         dbSkip()
+         Loop
+      Endif
+
+      _GuarPB1:=Recno()   // Guarda Posicao do Registro para Restaurar 
+      Estat()
+
+      dbSelectArea("SB1")
+      dbSetOrder(4)
+      dbGoto(_GuarPB1)
+
+      If !_lFatura
+         dbSelectArea("SB1")
+         dbSkip()
+         Loop
+      Endif
+
+      @Li,000 PSAY ALLTRIM(SB1->B1_COD) 
+      @Li,007 PSAY Left(SB1->B1_DESC,42)
+      @Li,050 PSAY _nTotQtd Picture "@E 99,999,999"   //"@E 999,999.99"
+      @Li,063 PSAY _nTotPrc Picture "@E 999,999.99"
+      @Li,076 PSAY _MaiorPr Picture "@E 999,999.99"
+      _MediaPr:=_nTotPrc/_nTotQtd
+      @Li,087 PSAY _MediaPr Picture "@E 999,999.99"
+      @Li,100 PSAY _MenorPr Picture "@E 999,999.99"
+      _PercMed:=((_MaiorPr/_MenorPr)-1)*100
+      @Li,112 PSAY _PercMed Picture "999.99%"
+      _PercFat:=((_nTotPrc*100)/_nFaturaTot)
+      @Li,121 PSAY _PercFat Picture "999.9999%"
+
+      @Li,132 PSAY avista Picture "@E 9,999.99"
+      @Li,142 PSAY DIA15  Picture "@E 9,999.99"
+      @Li,152 PSAY DIA30  Picture "@E 9,999.99"
+      @Li,162 PSAY DIA45  Picture "@E 9,999.99"
+      @Li,172 PSAY DIA60  Picture "@E 9,999.99"
+
+      @Li,180 PSAY _nTotCmv Picture "@E 999,999.99"      //IMPRIME O LOCAL PADRAO DO PRODUTO (SB1)
+      @Li,195 PSAY (_nTotPrc-_nTotCmv) Picture "@E 999,999.99"
+      _nMargemB := _nTotPrc-_nTotCmv
+      @Li,208 PSAY ((_nMargemB/_nTotPrc)*100) Picture "9999.99%"
+      
+      _nTQtdGr:=_nTQtdGr+_nTotQtd                                                                                                          
+      _nTPrcGr:=_nTPrcGr+_nTotPrc
+      _nToGCMV:=_nToGCMV+_nTotCmv
+
+      Li:=Li+1
+      dbSelectArea("SB1")
+      dbSkip()
+      _lImp:=.T.
+    Enddo
+
+    If _lImp
+
+//       dbSelectArea("SX5")
+//       dbSetOrder(1)
+//       dbSeek(xFilial("SX5")+"03"+_sQuebra)
+
+		dbselectArea("SBM")
+		dbSetOrder(1)
+		dbSeek(xfilial("SBM")+_sQuebra)
+
+       Li:=Li+1
+       @Li,000 PSAY Alltrim(_sQuebra)+" - "+substr(SBM->BM_DESC,1,42) //SUBS(SX5->X5_DESCRI,1,42)
+       @Li,049 PSAY _nTQtdGr Picture "@E 999,999,999" //"@E 999,999.99"
+       @Li,063 PSAY _nTPrcGr Picture "@E 999,999.99"
+       _PercFat:=((_nTPrcGr*100)/_nFaturaTot)
+       @Li,121 PSAY _PercFat Picture "999.9999%"
+       @Li,180 PSAY _nToGCMV Picture "@E 999,999.99"
+       @Li,195 PSAY (_nTPrcGr-_nToGCMV) Picture "@E 999,999.99"
+       @Li,208 PSAY ((_nTPrcGr-_nToGCMV)/_nTPrcGr*100) Picture "9999.99%"
+
+       Li:=Li+1
+       @Li,000 PSAY Replicate("-",220)
+       Li:=Li+1
+
+    Endif
+    dbSelectArea("SB1")
+Enddo
+
+If Li>=58
+   Li:=Cabec(titulo,cabec1,cabec2,nomeprog,tamanho,15)
+   Li:=Li+1
+Endif
+
+Li:=Li+1
+@Li,00 PSAY "Total Qtde....:"
+@Li,25 PSAY _nAcumQtd Picture "@E 999,999,999"   //"99999999.99"
+Li:=Li+1
+@Li,00 PSAY "Total Geral.........:"
+@Li,23 PSAY _nAcumVlr Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Total IPI...........:"
+@Li,23 PSAY _nAcumIPI Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Total ICMS..........:"
+@Li,23 PSAY _nAcumICM Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Total ICMS-ST.......:"
+@Li,23 PSAY _nAcuICMST Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Total Faturado......:"
+@Li,23 PSAY (_nAcumVlr+_nAcumIPI+_nAcuICMST) Picture "@E 99,999,999.99"
+Li:=Li+1
+Li:=Li+1
+@Li,00 PSAY "Total C.M.V.........:"
+@Li,23 PSAY _nAcuCMV Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Total Margem Bruta..:"
+@Li,23 PSAY (_nAcumVlr+_nAcumIPI+_nAcuICMST)-_nAcuCMV Picture "@E 99,999,999.99"
+Li:=Li+1
+@Li,00 PSAY "Margem Geral (%)....:"
+@Li,28 PSAY (((_nAcumVlr+_nAcumIPI+_nAcuICMST)-_nAcuCMV)/(_nAcumVlr+_nAcumIPI+_nAcuICMST)*100) Picture "9999.99%"
+Li:=Li+1
+
+If li != 80
+   Li:=Roda(cbCont,cbTxt,Tamanho)
+EndIf
+
+Set Device to Screen
+If aReturn[5] == 1
+   Set Printer TO
+   dbCommitAll()
+   OurSpool(wnrel)
+Endif
+
+MS_FLUSH()
+
+/*/
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±
+±³Funcao    ³Estat          ³Autor³ Fernando F. Campos  ³ 27/07/99 ³±
+±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±
+±³Descricao ³Executa estatistica dos Produtos.                     ³±
+±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*/
+// Substituido pelo assistente de conversao do AP5 IDE em 13/08/01 ==> Function Estat
+Static Function Estat()
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis Totalizadoras                                      ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  NDIA   := 0
+  AVISTA := 0
+  DIA15  := 0
+  DIA30  := 0
+  DIA45  := 0
+  DIA60  := 0
+  NNOTAA := 0
+  NNOTA15:= 0
+  NNOTA30:= 0  
+  NNOTA45:= 0  
+  NNOTA60:= 0  
+  QNOTA  := 0
+  QDATA  := 0
+//  SALDOEST:= 0
+
+  _nTotQtd:=0
+  _nTotCMV:=0
+  _nTotPrc:=0
+  _MaiorPr:=0
+  _MenorPr:=999999999
+  _MediaPr:=0
+  _lFatura:=.F.
+
+  dbSelectArea("SD2")
+  dbSetOrder(6)
+  dbSeek(xFilial("SD2")+SB1->B1_COD,.T.)
+  While !Eof() .And. SD2->D2_COD==SB1->B1_COD .And. SD2->D2_EMISSAO<=MV_PAR02
+     dbSelectArea("SA1")
+     dbSetOrder(1)
+     dbSeek(xFilial("SA1")+SD2->D2_CLIENTE+SD2->D2_LOJA)
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Filtra Parametros                                            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ //    If MV_PAR09 == 1
+ //       If SD2->D2_CLIENTE == "GEN014" .Or. SD2->D2_CLIENTE == "GEN004"
+ //          dbSelectArea("SD2")
+ //          dbSkip()
+ //          Loop
+  //      Endif
+   //  Endif
+ //   
+  //   If MV_PAR05==1 .And. SA1->A1_EST=="EX"
+    //    dbSelectArea("SD2")
+   //     dbSkip()
+      //  Loop
+   //  Endif
+
+  //   If MV_PAR05==2 .And. SA1->A1_EST<>"EX"
+  //      dbSelectArea("SD2")
+  //      dbSkip()
+  //      Loop
+  //   Endif
+
+     If SD2->D2_EMISSAO < MV_PAR01 .Or. SD2->D2_EMISSAO > MV_PAR02
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+ //    If SD2->D2_TIPO<>"N"
+ //       dbSelectArea("SD2")
+ //       dbSkip()
+ //       Loop
+ //    Endif
+
+     dbSelectArea("SF4")
+     dbSetOrder(1)
+     dbSeek(xFilial("SF4")+SD2->D2_TES)
+
+     If SF4->F4_DUPLIC == "N"
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+  //   If SD2->D2_LOCAL<MV_PAR07 .Or. SD2->D2_LOCAL>MV_PAR08
+  //      dbSelectArea("SD2")
+   //     dbSkip()
+   //     Loop
+   //  Endif
+
+     _lFatura:=.T.
+     _nTotQtd:=_nTotQtd+SD2->D2_QUANT
+     _nTotPrc:=_nTotPrc+SD2->D2_TOTAL
+     _nAcumVlr:=_nAcumVlr+SD2->D2_TOTAL
+     _nAcumIPI:=_nAcumIPI+SD2->D2_VALIPI
+     _nAcumICM:=_nAcumICM+SD2->D2_VALICM
+     _nAcuICMST:=_nAcuICMST+SD2->D2_ICMSRET
+     _nAcumQtd:=_nAcumQtd+SD2->D2_QUANT
+     _nTotCMV:=_nTotCMV+SD2->D2_CUSTO1
+     _nAcuCMV:=_nAcuCMV+SD2->D2_CUSTO1
+     dbSelectArea("SE1")
+     dbSetOrder(1)
+     dbSeek(xFilial("SE1")+SD2->D2_SERIE+SD2->D2_DOC)
+     QDATA := 0
+     QNOTA := 0
+     DO WHILE !SE1->(EOF()) .AND. SE1->E1_PREFIXO = SD2->D2_SERIE .AND. SE1->E1_NUM = SD2->D2_DOC
+        QDATA += SE1->E1_VENCREA-SE1->E1_EMISSAO
+        QNOTA ++
+        SE1->(DBSKIP())
+     ENDDO
+     NDIA := QDATA/QNOTA
+     IF NDIA < 15
+        AVISTA := AVISTA+(SD2->D2_TOTAL/SD2->D2_QUANT) //((SD2->D2_TOTAL+SD2->D2_VALIPI+SD2->D2_VALICM)/SD2->D2_QUANT)
+        NNOTAA ++
+     ELSEIF NDIA < 30
+        DIA15  := DIA15+(SD2->D2_TOTAL/SD2->D2_QUANT) //((SD2->D2_TOTAL+SD2->D2_VALIPI+SD2->D2_VALICM)/SD2->D2_QUANT)
+        NNOTA15 ++
+     ELSEIF NDIA < 45
+        DIA30  := DIA30+(SD2->D2_TOTAL/SD2->D2_QUANT) //((SD2->D2_TOTAL+SD2->D2_VALIPI+SD2->D2_VALICM)/SD2->D2_QUANT)
+        NNOTA30 ++
+     ELSEIF NDIA < 60
+        DIA45  := DIA45+(SD2->D2_TOTAL/SD2->D2_QUANT) //((SD2->D2_TOTAL+SD2->D2_VALIPI+SD2->D2_VALICM)/SD2->D2_QUANT)
+        NNOTA45 ++
+     ELSE
+        DIA60  := DIA60+(SD2->D2_TOTAL/SD2->D2_QUANT) //((SD2->D2_TOTAL+SD2->D2_VALIPI+SD2->D2_VALICM)/SD2->D2_QUANT)
+        NNOTA60 ++
+     ENDIF
+
+     If _MaiorPr<SD2->D2_PRCVEN
+        _MaiorPr:=SD2->D2_PRCVEN
+     Endif
+
+     If _MenorPr>SD2->D2_PRCVEN
+        _MenorPr:=SD2->D2_PRCVEN
+        _dEmissao:=SD2->D2_EMISSAO
+        _cNF := SD2->D2_DOC
+       
+     Endif
+
+     dbSelectArea("SD2")
+     dbSkip()
+  Enddo
+
+  IF AVISTA > 0
+     AVISTA := AVISTA/NNOTAA
+  ENDIF
+  IF DIA15 > 0
+     DIA15 := DIA15/NNOTA15
+  ENDIF
+  IF DIA30 > 0
+     DIA30 := DIA30/NNOTA30
+  ENDIF
+  IF DIA45 > 0
+     DIA45 := DIA45/NNOTA45
+  ENDIF
+  IF DIA60 > 0
+     DIA60 := DIA60/NNOTA60
+  ENDIF
+
+  dbSelectArea("SB2")
+  dbSetOrder(1)
+  dbSeek(xFilial("SB2")+SB1->B1_COD+SB1->B1_LOCPAD,.T.)
+
+
+
+
+Return
+
+/*/
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±
+±³Funcao    ³SomaTot        ³Autor³ Fernando F. Campos  ³ 17/08/99 ³±
+±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±
+±³Descricao ³Soma total dos Itens.                                 ³±
+±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*/
+// Substituido pelo assistente de conversao do AP5 IDE em 13/08/01 ==> Function SomaTot
+Static Function SomaTot()
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis Totalizadoras                                      ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  _nFaturaTot:=0
+  _nValDev:=0
+  dbSelectArea("SD2")
+  dbSetOrder(5)
+  dbSeek(xFilial("SD2")+DTOS(MV_PAR01),.T.)
+  SetRegua(Reccount())
+
+  While !Eof() .And. SD2->D2_EMISSAO<=MV_PAR02
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Filtra Parametros                                            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+    IncRegua()
+    dbSelectArea("SB1")
+    dbSetOrder(1)
+    dbSeek(xFilial("SB1")+SD2->D2_COD)
+
+ //    If MV_PAR06==2
+ //       If !SB1->B1_TIPO$"PA/MR/PI/SE"
+ //          dbSelectArea("SD2")
+ //          dbSkip()
+ //          Loop
+ //       Endif
+  //   Endif
+
+     If SB1->B1_COD<MV_PAR03 .Or. SB1->B1_COD>MV_PAR04
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+     dbSelectArea("SA1")
+     dbSetOrder(1)
+     dbSeek(xFilial("SA1")+SD2->D2_CLIENTE+SD2->D2_LOJA)
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Filtra Parametros                                            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  //   If MV_PAR05==1 .And. SA1->A1_EST=="EX"
+  //      dbSelectArea("SD2")
+  //      dbSkip()
+  //      Loop
+  //   Endif
+
+  //   If MV_PAR05==2 .And. SA1->A1_EST<>"EX"
+ //       dbSelectArea("SD2")
+ //       dbSkip()
+ //       Loop
+ //    Endif
+
+     If SD2->D2_EMISSAO < MV_PAR01 .Or. SD2->D2_EMISSAO > MV_PAR02
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+  //   If SD2->D2_TIPO<>"N"
+  //      dbSelectArea("SD2")
+  //      dbSkip()
+  //      Loop
+ //    Endif
+
+     dbSelectArea("SF4")
+     dbSetOrder(1)
+     dbSeek(xFilial("SF4")+SD2->D2_TES)
+
+     If SF4->F4_DUPLIC == "N"
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+     If SD2->D2_LOCAL<MV_PAR07 .Or. SD2->D2_LOCAL>MV_PAR08
+        dbSelectArea("SD2")
+        dbSkip()
+        Loop
+     Endif
+
+     _nFaturaTot:=_nFaturaTot+SD2->D2_TOTAL
+     _nValDev:=_nValDev+SD2->D2_VALDEV
+
+     dbSelectArea("SD2")
+     dbSkip()
+  Enddo
+Return
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡"o    ³ValidPerg ³ Autor ³                       ³ Data ³          ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡"o ³Compatibiliza o SX1.                                        ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ Generico                                                   ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+// Substituido pelo assistente de conversao do AP5 IDE em 20/03/02 ==> Function ValidPerg
+Static Function ValidPerg()
+dbSelectArea("SX1")
+dbSetOrder(1)
+
+_sAlias := Alias()
+aPerg  := {}
+cPerg := PADR(cPerg,10)
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis utilizadas para parametros                         ³
+//³ mv_par01         // Periodo De                               ³
+//³ mv_par02         // Periodo Ate                              ³
+//³ mv_par03         // Produto De                               ³
+//³ mv_par04         // Produto Ate                              ³
+//³ mv_par05         // Nacional    Importacao   Ambos           ³
+//³ mv_par06         // Considera Servico     Sim  Nao           ³
+//³ mv_par07         // Almoxarifado De                          ³
+//³ mv_par08         // Almoxarifado Ate                         ³
+//³ mv_par09         // Filtra Empresa Grupo                     ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Aadd(aPerg,{"Periodo De            ?","D",08,""})    //1
+Aadd(aPerg,{"Periodo Ate           ?","D",08,""})    //2
+Aadd(aPerg,{"Produto De            ?","C",15,"SB1"}) //3
+Aadd(aPerg,{"Produto Ate           ?","C",15,"SB1"}) //4
+Aadd(aPerg,{"Mercado               ?","C",01,""})    //5
+Aadd(aPerg,{"Considera M. O        ?","C",01,""})    //6
+Aadd(aPerg,{"Almoxarifado De       ?","C",02,"B1"})  //7
+Aadd(aPerg,{"Almoxarifado Ate      ?","C",02,"B1"})  //8
+Aadd(aPerg,{"Filtra Empresas Grupo ?","C",01,""})    //9
+//               |                  |  |  |   |
+//               |-> X1_GRUPO       |  |  |   |
+//                                  |->X1_TIPO|
+//                                     |->X1_TAMANHO
+//                                        |->X1_GSC
+//   			        					  |->X1_F3
+
+
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"01")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "01"
+	SX1->X1_PERGUNT  := aPerg[1][1]
+	SX1->X1_VARIAVL  := "mv_ch1"
+	SX1->X1_TIPO     := aPerg[1][2]
+	SX1->X1_TAMANHO  := aPerg[1][3]
+	SX1->X1_GSC      := "G"
+	SX1->X1_VAR01    := "mv_par01"
+	SX1->X1_F3       := aPerg[1][4]	
+EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"02")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "02"
+	SX1->X1_PERGUNT  := aPerg[2][1]
+	SX1->X1_VARIAVL  := "mv_ch2"
+	SX1->X1_TIPO     := aPerg[2][2]
+	SX1->X1_TAMANHO  := aPerg[2][3]
+	SX1->X1_GSC      := "G"
+	SX1->X1_VAR01    := "mv_par02" 
+	SX1->X1_F3       := aPerg[2][4]	
+EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"03")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "03"
+	SX1->X1_PERGUNT  := aPerg[3][1]
+	SX1->X1_VARIAVL  := "mv_ch3"
+	SX1->X1_TIPO     := aPerg[3][2]
+	SX1->X1_TAMANHO  := aPerg[3][3]
+	SX1->X1_GSC      := "G"       
+	SX1->X1_VAR01    := "mv_par03"	
+	SX1->X1_F3       := aPerg[3][4]
+EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"04")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "04"
+	SX1->X1_PERGUNT  := aPerg[4][1]
+	SX1->X1_VARIAVL  := "mv_ch4"
+	SX1->X1_TIPO     := aPerg[4][2]
+	SX1->X1_TAMANHO  := aPerg[4][3]
+	SX1->X1_GSC      := "G"
+	SX1->X1_VAR01    := "mv_par04"
+	SX1->X1_F3       := aPerg[4][4]
+EndIf
+
+//AADD(aRegs,{cPerg,"05","Mercado            ?","mv_ch5","C",01,0,0,"C","","mv_par05","Interno","","","Externo","","","Ambos","","","","","","","",""})
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"05")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "05"
+	SX1->X1_PERGUNT  := aPerg[5][1]
+	SX1->X1_VARIAVL  := "mv_ch5"
+	SX1->X1_TIPO     := aPerg[5][2]
+	SX1->X1_TAMANHO  := aPerg[5][3]
+	SX1->X1_PRESEL   := 3
+	SX1->X1_F3       := aPerg[5][4]
+	SX1->X1_GSC      := "C"
+	SX1->X1_VAR01    := "mv_par05"
+	SX1->X1_DEF01    := "Interno"
+	SX1->X1_DEF02    := "Externo"
+	SX1->X1_DEF03    := "Ambos"
+	SX1->X1_DEF04    := ""
+	EndIf
+
+//AADD(aRegs,{cPerg,"06","Considera M.O      ?","mv_ch6","C",01,0,0,"C","","mv_par06","Sim","","","Nao","","","","","","","","","","",""})
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"06")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "06"
+	SX1->X1_PERGUNT  := aPerg[6][1]
+	SX1->X1_VARIAVL  := "mv_ch6"
+	SX1->X1_TIPO     := aPerg[6][2]
+	SX1->X1_TAMANHO  := aPerg[6][3]
+	SX1->X1_PRESEL   := 2
+	SX1->X1_F3       := aPerg[6][4]
+	SX1->X1_GSC      := "C"
+	SX1->X1_VAR01    := "mv_par06"
+	SX1->X1_DEF01    := "Sim"
+	SX1->X1_DEF02    := "Nao"
+	SX1->X1_DEF03    := ""
+	SX1->X1_DEF04    := ""
+	EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"07")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "07"
+	SX1->X1_PERGUNT  := aPerg[7][1]
+	SX1->X1_VARIAVL  := "mv_ch7"
+	SX1->X1_TIPO     := aPerg[7][2]
+	SX1->X1_TAMANHO  := aPerg[7][3]
+	SX1->X1_GSC      := "G"       
+	SX1->X1_VAR01    := "mv_par07"	
+	SX1->X1_F3       := aPerg[7][4]
+EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"08")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "08"
+	SX1->X1_PERGUNT  := aPerg[8][1]
+	SX1->X1_VARIAVL  := "mv_ch4"
+	SX1->X1_TIPO     := aPerg[8][2]
+	SX1->X1_TAMANHO  := aPerg[8][3]
+	SX1->X1_GSC      := "G"
+	SX1->X1_VAR01    := "mv_par08"
+	SX1->X1_F3       := aPerg[8][4]
+EndIf
+
+dbSelectArea("SX1")
+If !dbSeek(cPerg+"09")
+	RecLock("SX1",.T.)
+	SX1->X1_GRUPO    := cPerg
+	SX1->X1_ORDEM    := "09"
+	SX1->X1_PERGUNT  := aPerg[9][1]
+	SX1->X1_VARIAVL  := "mv_ch9"
+	SX1->X1_TIPO     := aPerg[9][2]
+	SX1->X1_TAMANHO  := aPerg[9][3]
+	SX1->X1_PRESEL   := 2
+	SX1->X1_F3       := aPerg[9][4]
+	SX1->X1_GSC      := "C"
+	SX1->X1_VAR01    := "mv_par09"
+	SX1->X1_DEF01    := "Sim"
+	SX1->X1_DEF02    := "Nao"
+	SX1->X1_DEF03    := ""
+	SX1->X1_DEF04    := ""
+	EndIf
+
+dbSelectArea(_sAlias)
+Return
