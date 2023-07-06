@@ -6,8 +6,95 @@
 	"permissions": {
 		"authorizationtoken": ""
 	},
-	"connectedServer": {},
-	"configurations": [],
-	"savedTokens": [],
-	"lastConnectedServer": ""
+	"connectedServer": {
+		"id": "qqtccnkqrnljodyoky6oqux3u79ir",
+		"type": "totvs_server_protheus",
+		"name": "Producao",
+		"port": 32033,
+		"address": "localhost",
+		"buildVersion": "7.00.210324P",
+		"secure": false,
+		"includes": [
+			"C:\\TOTVS12133\\Protheus\\Protheus\\include"
+		],
+		"environments": [
+			"Producao"
+		],
+		"username": "admin",
+		"environment": "Producao",
+		"token": "djM6cXF0Y2Nua3Fybmxqb2R5b2t5Nm9xdXgzdTc5aXI6MTpsb2NhbGhvc3Q6MzIwMzM6MDo3LjAwLjIxMDMyNFA6Mw==:djE6UHJvZHVjYW86YWRtaW46WDZCVURNNFJiUCtPZG9TN0tITmFiTW56ZkFOMkljMHR1TnBaMCs5eWd5TT0=|djI6MTY4ODU2OTI0MjowOjE6MQ==.QwdYJJWbjzK2RB3sxshYTbaCinLu2h4zlIL04/rajundQCIJepsatzAuM1amjhOQMjmAgDXzMaVkdp1MuakOlA2+5BgYBl8f70L9oUSlQ/UC1poWHpW90jl69L2gvpe/y4/pS8vbajB6S/aWfeaaD86tfJ9xqU8riz5Cyu/A0nVMHFgHAZcr2ijZUjEvJAa9Gtug/IteGmYMSHYOyKR9oqH0gLqQiTobjgBdFci+UcL1Dq4Iy8PXN1a21WPJsHngodlBYpjJsOZjNBxgNOBfwZR59vdQmUG/bD4oH64504A+Mf4+SEYrqZMXn4A1vXheQRyDbP+GcpkIj6pJWEt0SA==",
+		"informations": {
+			"permissions": [],
+			"errorMessage": "",
+			"environmentDetectedType": "totvs_server_protheus",
+			"serverDetectedType": "totvs_server_protheus"
+		}
+	},
+	"configurations": [
+		{
+			"id": "qqtccnkqrnljodyoky6oqux3u79ir",
+			"type": "totvs_server_protheus",
+			"name": "Producao",
+			"port": 32033,
+			"address": "localhost",
+			"buildVersion": "7.00.210324P",
+			"secure": false,
+			"includes": [
+				"C:\\TOTVS12133\\Protheus\\Protheus\\include"
+			],
+			"environments": [
+				"Producao"
+			],
+			"username": "admin",
+			"environment": "Producao",
+			"token": "djM6cXF0Y2Nua3Fybmxqb2R5b2t5Nm9xdXgzdTc5aXI6MTpsb2NhbGhvc3Q6MzIwMzM6MDo3LjAwLjIxMDMyNFA6Mw==:djE6UHJvZHVjYW86YWRtaW46WDZCVURNNFJiUCtPZG9TN0tITmFiTW56ZkFOMkljMHR1TnBaMCs5eWd5TT0=|djI6MTY4ODU2OTI0MjowOjE6MQ==.QwdYJJWbjzK2RB3sxshYTbaCinLu2h4zlIL04/rajundQCIJepsatzAuM1amjhOQMjmAgDXzMaVkdp1MuakOlA2+5BgYBl8f70L9oUSlQ/UC1poWHpW90jl69L2gvpe/y4/pS8vbajB6S/aWfeaaD86tfJ9xqU8riz5Cyu/A0nVMHFgHAZcr2ijZUjEvJAa9Gtug/IteGmYMSHYOyKR9oqH0gLqQiTobjgBdFci+UcL1Dq4Iy8PXN1a21WPJsHngodlBYpjJsOZjNBxgNOBfwZR59vdQmUG/bD4oH64504A+Mf4+SEYrqZMXn4A1vXheQRyDbP+GcpkIj6pJWEt0SA==",
+			"informations": {
+				"permissions": [],
+				"errorMessage": "",
+				"environmentDetectedType": "totvs_server_protheus",
+				"serverDetectedType": "totvs_server_protheus"
+			}
+		},
+		{
+			"id": "6rxrclf0vydljodzt3t2wqlrd0sus2",
+			"type": "totvs_server_protheus",
+			"name": "Compila",
+			"port": 1234,
+			"address": "localhost",
+			"buildVersion": "7.00.210324P",
+			"secure": false,
+			"includes": [
+				"C:\\TOTVS12133\\Protheus\\Protheus\\include"
+			],
+			"environments": [
+				"Compila"
+			],
+			"username": "Admin",
+			"environment": "Compila",
+			"token": "djM6NnJ4cmNsZjB2eWRsam9kenQzdDJ3cWxyZDBzdXMyOjE6bG9jYWxob3N0OjEyMzQ6MDo3LjAwLjIxMDMyNFA6Mw==:djE6Q29tcGlsYTpBZG1pbjoxWmw3U0VMWDlxeTlYek5kcWd2NEdMRVpsSU5hZGhqekF6ZUI1RzZVQ2NFPQ==|djI6MTY4ODQ4MTAzMzowOjE6MQ==.A+O+6F9gopv2H271X+yusmh2T5R/d+LF6h2FL04KEFw+gcjMvzgyjYllnTVVc8B0p1NpuPP5rvQ9NtYuSvI7ZPF/tBze0JCGLRG/NDcLcPwE/AE8/oM1mYexwGpiAYFAT2GxWkjD6gcC2+kSHCooQrihZxaud/HJOR7kuN0s5j8GimSda0cHJ63wpGhiGG2ASvAH7N1gkUDhWh8PzP0h7vl04pzY+VPfkeY2Cho09svr3QeeFy7XJAV0BZn2PQ4IvTba2SvL8ANbyNorqdCmPsjyA6aYcD5+tndXwSmTblmDRwUZUReT+aI9eJSV7xZw8EVNZrfAOx3OyBtaHM7+Sw==",
+			"informations": {
+				"permissions": [],
+				"errorMessage": "",
+				"environmentDetectedType": "totvs_server_protheus",
+				"serverDetectedType": "totvs_server_protheus"
+			}
+		}
+	],
+	"savedTokens": [
+		[
+			"qqtccnkqrnljodyoky6oqux3u79ir:Producao",
+			{
+				"id": "qqtccnkqrnljodyoky6oqux3u79ir",
+				"token": "djM6cXF0Y2Nua3Fybmxqb2R5b2t5Nm9xdXgzdTc5aXI6MTpsb2NhbGhvc3Q6MzIwMzM6MDo3LjAwLjIxMDMyNFA6Mw==:djE6UHJvZHVjYW86YWRtaW46WDZCVURNNFJiUCtPZG9TN0tITmFiTW56ZkFOMkljMHR1TnBaMCs5eWd5TT0=|djI6MTY4ODU2OTI0MjowOjE6MQ==.QwdYJJWbjzK2RB3sxshYTbaCinLu2h4zlIL04/rajundQCIJepsatzAuM1amjhOQMjmAgDXzMaVkdp1MuakOlA2+5BgYBl8f70L9oUSlQ/UC1poWHpW90jl69L2gvpe/y4/pS8vbajB6S/aWfeaaD86tfJ9xqU8riz5Cyu/A0nVMHFgHAZcr2ijZUjEvJAa9Gtug/IteGmYMSHYOyKR9oqH0gLqQiTobjgBdFci+UcL1Dq4Iy8PXN1a21WPJsHngodlBYpjJsOZjNBxgNOBfwZR59vdQmUG/bD4oH64504A+Mf4+SEYrqZMXn4A1vXheQRyDbP+GcpkIj6pJWEt0SA=="
+			}
+		],
+		[
+			"6rxrclf0vydljodzt3t2wqlrd0sus2:Compila",
+			{
+				"id": "6rxrclf0vydljodzt3t2wqlrd0sus2",
+				"token": "djM6NnJ4cmNsZjB2eWRsam9kenQzdDJ3cWxyZDBzdXMyOjE6bG9jYWxob3N0OjEyMzQ6MDo3LjAwLjIxMDMyNFA6Mw==:djE6Q29tcGlsYTpBZG1pbjoxWmw3U0VMWDlxeTlYek5kcWd2NEdMRVpsSU5hZGhqekF6ZUI1RzZVQ2NFPQ==|djI6MTY4ODQ4MTAzMzowOjE6MQ==.A+O+6F9gopv2H271X+yusmh2T5R/d+LF6h2FL04KEFw+gcjMvzgyjYllnTVVc8B0p1NpuPP5rvQ9NtYuSvI7ZPF/tBze0JCGLRG/NDcLcPwE/AE8/oM1mYexwGpiAYFAT2GxWkjD6gcC2+kSHCooQrihZxaud/HJOR7kuN0s5j8GimSda0cHJ63wpGhiGG2ASvAH7N1gkUDhWh8PzP0h7vl04pzY+VPfkeY2Cho09svr3QeeFy7XJAV0BZn2PQ4IvTba2SvL8ANbyNorqdCmPsjyA6aYcD5+tndXwSmTblmDRwUZUReT+aI9eJSV7xZw8EVNZrfAOx3OyBtaHM7+Sw=="
+			}
+		]
+	],
+	"lastConnectedServer": "qqtccnkqrnljodyoky6oqux3u79ir"
 }

@@ -67,11 +67,11 @@ User Function RAMATA110()
 		{"C1_DATPRF" 	,dDataBase						     ,Nil},; //Data
 		{"C1_TPOP"    	,"F"							     ,Nil},; // Tipo SC
 		{"C1_CC"  		,TRB1->B1_CC    					 ,Nil},; //Centro de Custos
-		{"C1_CONTA"    ,"BRADESCO"                          ,NIL},;
-			{"C1_APROV"    ,"L" 		   					     ,Nil},; //LIBERA SC
-		{"C1_GRUPCOM"  ,MaRetComSC(TRB1->B1_COD,UsrRetGrp() ,cUser),Nil},; //Grupo de Compras
-		{"C1_OBS"  	,cTextoObs			 		   	     ,Nil},;  //Observacao
-		{"AUTVLDCONT"  ,"N"                                 ,Nil}}}
+		{"C1_CONTA"    ,"BRADESCO"                           ,NIL},;
+		{"C1_APROV"    ,"L" 		   					     ,Nil},; //LIBERA SC
+		{"C1_GRUPCOM"  ,MaRetComSC(TRB1->B1_COD,UsrRetGrp()  ,cUser),Nil},; //Grupo de Compras
+		{"C1_OBS"  	,cTextoObs			 		   	         ,Nil},;  //Observacao
+		{"AUTVLDCONT"  ,"N"                                  ,Nil}}}
 
 		lMSErroAuto := .F.
 
