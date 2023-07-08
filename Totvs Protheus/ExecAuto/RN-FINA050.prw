@@ -1,35 +1,22 @@
 #INCLUDE "Protheus.ch"
 #DEFINE USADO CHR(0)+CHR(0)+CHR(1)
-/*/
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
-±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
-±±ÉÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍ»±±
-±±ºPrograma  ³FINAT003  º Autor ³Paulo Bindo         º Data ³  15/09/04   º±±
-±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
-±±ºDescricao ³Gera pre-pagamentos                                         º±±
-±±º          ³                                                            º±±
-±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
-±±ºUso       ³ AP6 IDE                                                    º±±
-±±ÈÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼±±
-±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
-ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-/*/
+
 
 User Function RAFINA050()
 	Local aArea     := GetArea()
-	
+
 	Private cCadastro := "Cadastro de Pré-Pagamentos"
 	Private oDlg
 	Private oTempTable
-	Private cAlias := "TIT"	
+	Private cAlias := "TIT"
 
 	//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 	//³ Monta um aRotina proprio                                            ³
 	//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
 	Private aRotina := { {"Pesquisar","AxPesqui",0,1 },;
-	                     {"Visualizar","AxVisual",0,2},;
-	                     {"Gerar","U_FINAT3Func",0,7 }}
+		{"Visualizar","AxVisual",0,2},;
+		{"Gerar","U_FINAT3Func",0,7 }}
 
 	Private cDelFunc := ".T." // Validacao para a exclusao. Pode-se utilizar ExecBlock
 
@@ -45,22 +32,9 @@ User Function RAFINA050()
 Return
 
 
-/*
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
-±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
-±±ÉÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍ»±±
-±±ºPrograma  ³FINAT2Func  ºAutor  ³Paulo Bindo       º Data ³  09/15/04   º±±
-±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
-±±ºDesc.     ³Funcao que abre as telas                                    º±±
-±±º          ³                                                            º±±
-±±ÌÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹±±
-±±ºUso       ³ AP                                                         º±±
-±±ÈÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼±±
-±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
-ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-*/
+
 User Function FINAT3Func()
-	
+
 	Local cPerg      := "FIAT03"
 	Local nOpca      := 0
 	Local aAlter     :={} // Campos que podem ser alterados na GETDB
@@ -81,7 +55,7 @@ User Function FINAT3Func()
 	If Pergunte(cPerg,.T.)
 		//FAZ A SELECAO DE DADOS NO SE2 CONFORME PARAMETROS
 
-		cQuery := " SELECT  E2_HIST, E2_PREFIXO, E2_NUM, E2_NATUREZ, E2_FORNECE,E2_NOMFOR, E2_VALOR, E2_EMISSAO, E2_TIPO, E2_CCUSTO,  E2_LOJA 
+		cQuery := " SELECT  E2_HIST, E2_PREFIXO, E2_NUM, E2_NATUREZ, E2_FORNECE,E2_NOMFOR, E2_VALOR, E2_EMISSAO, E2_TIPO, E2_CCUSTO,  E2_LOJA
 		cQuery += " FROM "+RetSqlName("SE2")+" "
 		cQuery += " WHERE E2_PREFIXO BETWEEN '"+mv_par01+ "' AND '"+mv_par02+"'"
 		cQuery += " AND E2_NATUREZ BETWEEN '"+mv_par03+"' AND '"+mv_par04+"'"
@@ -107,8 +81,8 @@ User Function FINAT3Func()
 		//CASO TENHA DADOS ADICIONA NA MATRIZ
 		If nRecCount > 0
 			//CRIA ARQUIVO TEMPORARIO
-			
-			
+
+
 			AADD(aFields,{"MARC","C",1,0})       //PREFIXO
 			AADD(aFields,{"PREF","C",3,0})       //PREFIXO
 			AADD(aFields,{"NUM" ,"C",9,0})       //NUMERO
@@ -143,7 +117,7 @@ User Function FINAT3Func()
 			//Criação da tabela
 			//------------------
 			oTempTable:Create()
-			
+
 
 			dbSelectArea("TRB")
 			dbGoTop()
@@ -156,7 +130,7 @@ User Function FINAT3Func()
 				NUM  := TRB->E2_NUM
 				NAT  := TRB->E2_NATUREZ
 				FORN := TRB->E2_FORNECE
-				NFOR := TRB->E2_NOMFOR				
+				NFOR := TRB->E2_NOMFOR
 				VALO := TRB->E2_VALOR
 				EMIS := TRB->E2_EMISSAO
 				TIPO := TRB->E2_TIPO
@@ -215,7 +189,7 @@ User Function FINAT3Func()
 		DEFINE MSDIALOG oDlg TITLE "Pré-Pagamento" From 100,0 To 445,878 OF oMainWnd PIXEL
 		@ 10,15 TO 129,135 LABEL OemToAnsi("Repetição") OF oDlg  PIXEL
 		@ 25,20 RADIO oUsado VAR nUsado 3D SIZE 70,10 PROMPT  OemToAnsi("Continuar"),;
-		                                                      	OemToAnsi("Desmarcar") OF oDlg PIXEL
+			OemToAnsi("Desmarcar") OF oDlg PIXEL
 		@ 045,020 Say OemToAnsi("Tipo") SIZE 60,10 OF oDlg PIXEL
 		@ 045,055 MSGET cTipo F3 "05" SIZE 15,10 OF oDlg PIXEL
 		@ 065,020 Say OemToAnsi("Prefixo") SIZE 60,10 OF oDlg PIXEL
@@ -229,7 +203,7 @@ User Function FINAT3Func()
 		DEFINE SBUTTON FROM 137,323 TYPE 1 ACTION (Iif(!Empty(cPrefix).And.!Empty(cTipo),(nOpca:=1,oDlg:End()),MsgStop("O campo Pefixo e Tipo devem estar preenchidos"))) Of oDlg PIXEL ENABLE
 		DEFINE SBUTTON FROM 137,350 TYPE 2 ACTION oDlg:End() ENABLE OF oDlg
 		ACTIVATE MSDIALOG oDlg CENTERED Valid lClose
-		If nOpca == 1		
+		If nOpca == 1
 			MsgRun("Efetuando a cópia dos registros selecionados, Aguarde...","",{|| CursorWait(), U_FIAT3Grava() ,CursorArrow()})
 		EndIf
 		dbSelectArea("TIT")
@@ -263,7 +237,7 @@ Static Function VerData(n)
 			lClose := .T.
 		EndIf
 	ElseIf n == 2
-		If dDataE > dDataP 
+		If dDataE > dDataP
 			MsgStop("A data de Emissão é maior que a Data de Vencimento!")
 			lClose := .F.
 		ElseIf dDataE >= dDataBase
@@ -306,20 +280,20 @@ User Function FIAT3Grava()
 		cNumSE2  := GetSX8Num("SE2","E2_NUM")//BUSCA NUMERACAO DO SE2
 
 		aTitulo := { {"E2_PREFIXO"	, cPrefix	,Nil},;
-		{"E2_NUM"		,cNumSE2				,Nil},;
-		{"E2_PARCELA"	,Space(01)				,Nil},;
-		{"E2_TIPO"		,cTipo					,Nil},;
-		{"E2_NATUREZ"	,TIT->NAT				,Nil},;
-		{"E2_FORNECE"	,TIT->FORN				,Nil},;
-		{"E2_LOJA"		,TIT->LOJA				,Nil},;
-		{"E2_EMISSAO"	,dDataE					,Nil},;
-		{"E2_VENCTO"	,dDataP					,Nil},;
-		{"E2_VENCREA"	,DataValida(dDataP)		,Nil},;
-		{"E2_VALOR"		,TIT->VALO		 		,Nil},;
-		{"E2__REPETE"	,AllTrim(Str(nUsado))	,Nil},;
-		{"E2_HIST"  	,TIT->HIST     			,Nil},;
-		{"E2_CCUSTO"  	,TIT->CCUS	  			,Nil},;
-		{"E2__NUMTIT"	,TIT->NUM				,Nil}}
+			{"E2_NUM"		,cNumSE2				,Nil},;
+			{"E2_PARCELA"	,Space(01)				,Nil},;
+			{"E2_TIPO"		,cTipo					,Nil},;
+			{"E2_NATUREZ"	,TIT->NAT				,Nil},;
+			{"E2_FORNECE"	,TIT->FORN				,Nil},;
+			{"E2_LOJA"		,TIT->LOJA				,Nil},;
+			{"E2_EMISSAO"	,dDataE					,Nil},;
+			{"E2_VENCTO"	,dDataP					,Nil},;
+			{"E2_VENCREA"	,DataValida(dDataP)		,Nil},;
+			{"E2_VALOR"		,TIT->VALO		 		,Nil},;
+			{"E2__REPETE"	,AllTrim(Str(nUsado))	,Nil},;
+			{"E2_HIST"  	,TIT->HIST     			,Nil},;
+			{"E2_CCUSTO"  	,TIT->CCUS	  			,Nil},;
+			{"E2__NUMTIT"	,TIT->NUM				,Nil}}
 
 		lMsErroAuto := .F.
 		//GERA O TITULO NO SE2
@@ -327,7 +301,7 @@ User Function FIAT3Grava()
 		If lMsErroAuto
 			nContErro ++
 			RollBackSX8()
-		Else                               
+		Else
 			ConfirmSX8()
 		EndIf
 		dbSelectArea("TIT")
@@ -344,7 +318,7 @@ User Function FIAT3Grava()
 		EndIf
 		MsErase(cNomArqErro)
 		If MsgYesNo(OemToAnsi("Ocorreram problemas com" + "  ( " + Ltrim(Str(nContErro,5)) + " )  " + "titulos durante o processo de integracao. Deseja visualiza-los agora?"),;
-		OemToAnsi("Aten‡„o"))
+				OemToAnsi("Aten‡„o"))
 			fVerLog()
 		EndIf
 	EndIf
