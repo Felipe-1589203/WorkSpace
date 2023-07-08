@@ -1,3 +1,5 @@
-from kivy.base import runtouchapp
-from kivy.unix.button import Button
-runtouchapp(Button(text = "Hello Word"))
+Login = input("Login: ")
+Senha = input("Senha: ")
+
+print("O usuario informado foi: %s, e a senha: %s" %Login %Senha)
+    
