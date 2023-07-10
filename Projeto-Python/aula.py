@@ -1,5 +1,7 @@
-Login = input("Login: ")
-Senha = input("Senha: ")
-
-print("O usuario informado foi: %s, e a senha: %s" %Login %Senha)
-    
+acao = int(input("Digite '1' para sim ou digite '2' para não: "))
+if (acao == 1):
+    print("Você disse sim!!!")
+elif (acao == 2):
+    print("Você disse não!!!")
+else:
+    print("voce não digitou nem '1' e nem '2'!")
