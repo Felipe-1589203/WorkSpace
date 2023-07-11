@@ -1,3 +1,6 @@
-num1 = int(input("Digite um número: "))
-s = "Par" if num1 % 2 == 0 else "Impar"
-print("O número digitao é:", s)
+print("Antes de entrar no laço")
+for item in range(10):
+    print(item)
+    if (item == 6):
+        continue
+    print("Depois de entrar no laço")
