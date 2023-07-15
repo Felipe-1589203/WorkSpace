@@ -11,5 +11,14 @@
 			"isMultiSession": true,
 			"enableTableSync": true
 		}
-	]
+	],
+	"lastPrograms": [
+		{
+			"label": "xxx"
+		},
+		{
+			"label": "U_XTEMPOX"
+		}
+	],
+	"lastProgramExecuted": "xxx"
 }
