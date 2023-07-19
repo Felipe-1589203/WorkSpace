@@ -1,9 +1,7 @@
-a = 10
-b = 25
-c = 66
+set1 = {'a', 'b', 'c'}
+set2 = {'a', 'd', 'e'}
+set3 = {'c', 'd', 'f'}
 
-x = int(input("Digite um número: "))
-if(x==a or x==b or x==c):
-    print("Está contido")
-else:
-    print("Não esta contido")    
+set4 = set1.union(set3)
+
+print(set4)

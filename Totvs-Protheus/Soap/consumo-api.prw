@@ -1,11 +1,12 @@
 #INCLUDE 'Totvs.ch'
+#INCLUDE 'Protheus.ch'
 #INCLUDE 'ApWebSRV.ch'
 
 User Function _GGLXARK;Return 
     WSCLIENT WSSERVERTTIME 
 
         WSMETHOD NEW
-        WSMETHOD INIT 
+        WSMETHOD INIT
         WSMETHOD RESET
         WSMETHOD CLONE
         WSMETHOD GETSERVERTTIME        
