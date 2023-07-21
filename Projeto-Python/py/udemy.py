@@ -1,7 +1,10 @@
-set1 = {'a', 'b', 'c'}
-set2 = {'a', 'd', 'e'}
-set3 = {'c', 'd', 'f'}
+frutas1 = ['banana', 'abacate', 'morango', 'kiwi', 'abcaxi']
 
-set4 = set1.union(set3)
 
-print(set4)
+# for iten in frutas1:
+#   if 'b' in iten:
+#      frutas2.append(iten)
+
+frutas2 = [iten for iten in frutas1 if 'b' in iten]
+
+print(frutas2)
