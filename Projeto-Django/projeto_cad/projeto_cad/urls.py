@@ -4,5 +4,5 @@ from aplicativo_cad import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('usuarios/', views.usuario, name='listagem_usuarios')
+    path('usuarios/', views.usuarios, name='listagem_usuarios')
 ]
