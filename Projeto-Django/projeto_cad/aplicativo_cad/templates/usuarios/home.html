@@ -20,6 +20,7 @@
         </div>
     </nav>
     <form action="{% url 'listagem_usuarios' %}" method="post">
+        {% csrf_token %}
         <div style="text-align: center;" class="container">
             <h1>Cadastro de Usuarios</h1>
             Nome <input name="Nome" calss="form-control-sm" type="text">

@@ -23,5 +23,6 @@
 			"label": "SIGAFAT"
 		}
 	],
-	"lastProgramExecuted": "xxx"
+	"lastProgramExecuted": "<cancel>",
+	"lastProgramArguments": []
 }
