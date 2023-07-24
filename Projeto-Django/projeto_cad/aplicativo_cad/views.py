@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import *
+from .models import Usuario
 
 
 def home(request):
@@ -13,6 +13,8 @@ def usuarios(request):
     novo_usuario.idade = request.POST.get('idade')
     novo_usuario.save()
     # Exibir todos os usuarios ja cadastrados em uma nova pagina
-    usuarios = {'usuarios': Usuario.objects.all()}
+    usuarios = {
+        'usuarios': Usuario.objects.all()
+    }
     # Retornar os dados para a pagina de listagem de usuarios
     return render(request, 'usuarios/usuarios.html', usuarios)
