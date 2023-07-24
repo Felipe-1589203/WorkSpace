@@ -51,7 +51,7 @@ Return
 /*/
 Static Function ReportDef()
 
-Local aOrdem    :={OemToAnsi(' Por Codigo    '),OemToAnsi(' Por Tipo      '),OemToAnsi(' Por Grupo   '),OemToAnsi(' Por Descricao '),OemToAnsi(' Por Local    ')}		//############
+Local aOrdem    := {OemToAnsi(' Por Codigo    '),OemToAnsi(' Por Tipo      '),OemToAnsi(' Por Grupo   '),OemToAnsi(' Por Descricao '),OemToAnsi(' Por Local    ')}		//############
 Local cPictQFim := PesqPict("SB2",'B2_QFIM' )
 Local cPictQtd  := PesqPict("SB7",'B7_QUANT')
 Local cPictVFim := PesqPict("SB2",'B2_VFIM1')
