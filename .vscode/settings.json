@@ -1,11 +1,5 @@
 {
     "totvsLanguageServer.welcomePage": false,
-    "totvsLanguageServer.askCompileResult": false,
-    "totvsLanguageServer.workspaceServerConfig": true,
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.autopep8"
-    },
-    "python.formatting.provider": "none"
+    "python.linting.enabled": true
 }

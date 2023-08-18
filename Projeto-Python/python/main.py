@@ -1,14 +1,20 @@
-temp = int(input("Qual a temperatura da carne? "))
+def mult(num1, num2):
+    return num1 * num2
 
-if temp < 48:
-    print("Deixe mais uns minutinhos")
-elif temp in range(48, 53):
-    print("A carne esta selada")
-elif temp in range(54, 59):
-    print("Ao ponto para mal")
-elif temp in range(60, 64):
-    print("Ao ponto")
-elif temp in range(65, 70):
-    print("Ao ponto para bem passado")
-elif temp >= 71:
-    print("Bem passado")
+oper = input('Digite a operação A, D, M, S: ')
+number1 = int(input('Digite o primeiro numero: '))
+number2 = int(input('Digite o segundo numero: '))
+
+if oper == 'M':
+    resultado = mult(number1, number2)
+
+elif oper == 'A':
+    resultado = number1 + number2
+elif oper == 'D':
+    resultado = number1 / number2
+elif oper == 'S':
+    resultado = number1 - number2
+elif oper != range('A,D,M,S'):
+    resultado = 'Operação inválida'
+
+print(f'O resultado da operação é {number1} {oper} {number2}: {resultado}')
