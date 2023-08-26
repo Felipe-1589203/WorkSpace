@@ -58,16 +58,16 @@ Static Function ModelDef()
     Local oStruGrid := fModStruct()
  
     //Monta o modelo de dados, e na Pós Validação, informa a função fValidGrid
-    oModel := MPFormModel():New('MOD2MVCM', /*bPreValidacao*/, {|oModel| fValidGrid(oModel)}, /*bCommit*/, /*bCancel*/ )
+    oModel := MPFormModel():New('MOD2MVCM', /*bPreValidacao*/, {|oModel| fValidGrid(oModel)}, bCommit, bCancel)
     //Agora, define no modelo de dados, que terá um Cabeçalho e uma Grid apontando para estruturas acima
     oModel:AddFields('MdFieldSZB', NIL, oStruCab)
     oModel:AddGrid('MdGridSZB', 'MdFieldSZB', oStruGrid, , )
  
     //Monta o relacionamento entre Grid e Cabeçalho, as expressões da Esquerda representam o campo da Grid e da direita do Cabeçalho
     oModel:SetRelation('MdGridSZB', {;
-            {'ZB_FILIAL', 'xFilial("SZB")'},;
-            {"ZB_CODUSU",  "ZB_CODUSU"};
-            }, SZB->(IndexKey(1)))
+                                    {'ZB_FILIAL', 'xFilial("SZB")'},;
+                                    {"ZB_CODUSU",  "ZB_CODUSU"};
+                                    }, SZB->(IndexKey(1)))
      
     //Definindo outras informações do Modelo e da Grid
     oModel:GetModel("MdGridSZB"):SetMaxLine(9999)
