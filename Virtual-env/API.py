@@ -5,7 +5,7 @@ from Resources.hotel import Hoteis
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resources(Hoteis, '/hoteis')
+api.add_resource(Hoteis, '/hoteis')
 if __name__  == '__main__':
     app.run(debug=True)    
 

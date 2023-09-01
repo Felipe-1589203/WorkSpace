@@ -1,0 +1,727 @@
+{
+  "data": [
+    {
+    "productID": "b4e4701f-2ae5-4a51-a5eb-67cb9a27ad11",
+    "productName": "Finclass - Produto Teste",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2021-11-19T20:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2021-11-19T20:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 10000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "d86796c9-6834-40bf-a751-4d2144b396bd",
+    "productName": "Finclass - Plano Vitalício Fundador",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2021-11-23T20:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2021-11-23T20:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 99790,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "64739ef1-6957-46f4-8ddf-57164ebb430c",
+    "productName": "Finclass - Plano Vitalício",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2021-11-23T20:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2021-11-23T20:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 149790,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "b7f4cf6b-9772-4973-918a-71608509858b",
+    "productName": "Finclass - Vitalício Fundador",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-02-15T14:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-02-15T14:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 149900,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "cb7bd132-7d24-414e-9f02-0c9cf73707e2",
+    "productName": "Finclass - Vitalício",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-02-15T14:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-02-15T14:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 199900,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "c94bc6ff-a9d9-46dc-bb9b-146ed2039a39",
+    "productName": "Viver de Renda Cripto - Produto Teste",
+    "productKind": "subscription",
+    "productAuthors": ["LANCAMENTO_VIVERDERENDA"],
+    "productCreatedAt": "2022-03-25T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-03-25T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 249700,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "8dea34e5-aaf3-4822-ad45-6f91de4e122a",
+    "productName": "Spiti - O Melhor da Renda Fixa",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-07-27T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-07-27T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "3d6bf250-7198-4591-bf18-556a83c5271a",
+    "productName": "Spiti - O Melhor dos FIIs",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-07-27T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-07-27T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "7ad0155e-fe0c-4776-8b92-a9ed6714c27e",
+    "productName": "Spiti - O Melhor da Bolsa",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-07-27T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-07-27T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "13e7036c-7331-4066-b3ea-cab59a2d6e6d",
+    "productName": "Spiti - Você, Investidor Global",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-07-27T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-07-27T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "5fa8c61b-9dc3-4503-b607-e4c2c6af4dac",
+    "productName": "Finclass - Vitalício Fundador",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-08-11T14:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-08-11T14:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 199900,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "5e37d99e-55ed-4ea9-b2d5-baf2473a2850",
+    "productName": "Finclass - Vitalício",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-08-11T14:24:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-08-11T14:24:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 249900,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "17d31576-acb3-4a41-a8a4-abd99cc9c0be",
+    "productName": "Spiti - Renda Total",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-09-19T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-09-19T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 99700,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "dfccbee1-9257-4f12-96bc-e0cbb1824fce",
+    "productName": "Spiti - O Melhor dos Fundos Imobiliários",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2022-09-23T03:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-09-23T03:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 17880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "4ffe19f8-bce2-4e35-ae10-6bac168d9216",
+    "productName": "Finclass - Vitalício - Time Vendas",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-11-8T14:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-04-24T14:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 150000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 99700 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 50300 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "42e90332-d68b-4f15-81f5-82e94f701345",
+    "productName": "Finclass - Vitalício Member",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-11-8T14:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-11-8T14:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "68689fdf-55e5-4574-ad33-d9f244f832ac",
+    "productName": "Finclass - Combo Delta",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS", "SPITI"],
+    "productCreatedAt": "2022-11-17T11:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-11-17T11:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 70000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "f0b78c83-3935-4f9d-b49f-629d7aa6f5ae",
+    "productName": "Finclass - Oferta Grupo Global",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-11-21T14:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-11-21T14:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 100000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "9fa76a60-ef29-4297-bd0d-04d9d46c13bb",
+    "productName": "Finclass - Vitalício Upsell",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-11-23T17:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-11-23T17:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 170120,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "e9dabaa7-c2c2-4246-8213-8e2971631c9f",
+    "productName": "Finclass - Vitalício Upsell Higher",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2022-11-25T17:11:10.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2022-11-25T17:11:10.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "688630dc-4513-4167-b555-cc7770f36b26",
+    "productName": "Spiti - A Seleção de Fundos",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2023-01-10T14:37:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-01-10T14:37:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "550b421d-c4d2-4040-8c6a-cad5b04c4364",
+    "productName": "Spiti - Carteira do Futuro",
+    "productKind": "subscription",
+    "productAuthors": ["SPITI"],
+    "productCreatedAt": "2023-01-10T14:37:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-01-10T14:37:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "39a0d928-a683-4331-bf21-12ca9f64e545",
+    "productName": "Finclass - Plano Vitalício Fundador",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-02-10T11:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-02-10T11:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "db558ba3-5b19-496e-bd51-adfdb79023dc",
+    "productName": "Spiti - Imersão em FIIs",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-04-12T14:30:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-04-12T14:30:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 11880,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "percentage": 100 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "49043bd8-269b-4d5a-8cb8-83b26f071636",
+    "productName": "Finclass - Plano Vitalício Upsell",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-02-10T11:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-02-10T11:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 214000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": ["SPITIONE"],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 99700 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 114300 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "d89a89b3-8f2e-4ddf-a66c-5d22fe7ec8f6",
+    "productName": "Spiti - SpitiOne Upsell",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-03-29T11:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-03-29T11:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 250000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "95102f9e-c1fc-4097-bc7b-b0a5253e5342",
+    "productName": "Spiti - SpitiOne Upsell",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-05-16T14:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-05-18T11:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 222223,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "bc666aa5-de6e-46f0-b482-1cc0d5c107d4",
+    "productName": "Finclass - Plano Vitalício Founder",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-04-13T14:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-04-13T14:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": ["SPITIONE"],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 99700 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 100300 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "744a05a9-5fe4-466e-95a1-95a216398000",
+    "productName": "Finclass - Plano Vitalício",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-04-13T14:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-04-13T14:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 250000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": ["SPITIONE"],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 99700 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 150300 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "1fc39239-5f43-4eb7-93e9-b63a0a4b34d1",
+    "productName": "Spiti - SpitiOne",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-04-13T14:00:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-04-13T14:00:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": false,
+      "splitRules": []
+    },
+    "meta": {
+      "isSpitiOneUnlock": false
+    }
+  },
+  {
+    "productID": "ed8cb742-42c8-4d1c-89b7-b6987ddec5c4",
+    "productName": "Spiti - SpitiOne",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-06-13T15:30:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-06-13T15:30:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 222216,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 222216 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 0 }
+      ]
+    },
+    "meta": {
+      "isSpitiOneUnlock": true
+    }
+  },
+  {
+    "productID": "04b08b42-b59a-47e8-aad4-8844e7f9936a",
+    "productName": "Spiti - SpitiOne",
+    "productKind": "subscription",
+    "productAuthors": ["FINCLASS"],
+    "productCreatedAt": "2023-06-14T15:30:00.897Z",
+    "productCreatedBy": "SYS",
+    "productUpdatedAt": "2023-06-14T15:30:00.897Z",
+    "productUpdatedBy": "SYS",
+    "productPrice": 200000,
+    "productMinInstallments": 1,
+    "productMaxInstallments": 12,
+    "productTriggers": [],
+    "productsAttached": [],
+    "split": {
+      "isActive": true,
+      "splitRules": [
+        { "recipient_id": "re_clgdzs8zpjy78019tgcufdsrn", "amount": 222216 },
+        { "recipient_id": "re_ckndtlm482jvg0p9tz0zzlr2y", "amount": 0 }
+      ]
+    }
+  }
+]
+}
+    
+    

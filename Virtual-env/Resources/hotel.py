@@ -1,4 +1,4 @@
-from flask_restful import Resources
+from flask_restful import Resource
 
 hoteis = [
     {
@@ -23,6 +23,6 @@ hoteis = [
         'cidade': 'Itapevi'
     }
 ]
-class Hoteis(Resources):
+class Hoteis(Resource):
     def get(self):
         return {'hoteis': hoteis}
