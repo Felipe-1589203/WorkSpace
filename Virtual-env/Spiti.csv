@@ -1,2 +1,0 @@
-id,name,code,unit,status,description,invoice,created_at,updated_at,pricing_schema,metadata
-516501,Produto - Homologação de adquirente,,,active,,always,2019-11-12T17:07:02.000-03:00,2019-11-12T17:07:02.000-03:00,"{'id': 10449009, 'short_format': 'R$ 1,00', 'price': '1.0', 'minimum_price': None, 'schema_type': 'flat', 'pricing_ranges': [], 'created_at': '2019-11-12T17:07:02.000-03:00'}",{}
