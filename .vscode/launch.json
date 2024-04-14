@@ -21,8 +21,19 @@
 		},
 		{
 			"label": "SIGAFAT"
+		},
+		{
+			"label": "dbSeek.tlpp"
+		},
+		{
+			"label": "u_dbSeek.tlpp"
+		},
+		{
+			"label": "u_dbSeek.prw"
+		},
+		{
+			"label": "u_dbSeek1"
 		}
 	],
-	"lastProgramExecuted": "<cancel>",
-	"lastProgramArguments": []
+	"lastProgramExecuted": "u_dbSeek1"
 }
