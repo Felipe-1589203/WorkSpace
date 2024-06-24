@@ -7,7 +7,7 @@
 			"name": "Depuração do idioma TOTVS",
 			"program": "${command:AskForProgramName}",
 			"cwb": "${workspaceFolder}",
-			"smartclientBin": "C:/TOTVS12133/Protheus/Protheus/bin/smartclient/smartclient.exe",
+			"smartclientBin": "../totvs/bin/smartclient/smartclient.exe",
 			"isMultiSession": true,
 			"enableTableSync": true
 		}
@@ -21,19 +21,8 @@
 		},
 		{
 			"label": "SIGAFAT"
-		},
-		{
-			"label": "dbSeek.tlpp"
-		},
-		{
-			"label": "u_dbSeek.tlpp"
-		},
-		{
-			"label": "u_dbSeek.prw"
-		},
-		{
-			"label": "u_dbSeek1"
 		}
 	],
-	"lastProgramExecuted": "u_dbSeek1"
+	"lastProgramExecuted": "<cancel>",
+	"lastProgramArguments": []
 }

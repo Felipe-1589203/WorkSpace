@@ -1,6 +1,6 @@
-numero = 0
+jedi = ["Yoda", "Luke", "Obi-Wan", "Anakin"]
 
+jedi.pop(0)
 
-while numero < 20:
-    numero += 1
-    print(f'{numero}')
+for nome in jedi:
+    print(nome)
