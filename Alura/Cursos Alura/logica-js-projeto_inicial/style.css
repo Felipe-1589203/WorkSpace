@@ -1,8 +1,4 @@
-h2 {
-    color: orange;
-    font-size: 20px;
-}
-
-p {
-    color: black;
+body {
+    color: #ff0000;
+    font-size: 50px;
 }

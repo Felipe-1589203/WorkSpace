@@ -1,0 +1,38 @@
+BS Icons
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+--------------------------------------------------------
+
+Google Fonts
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+--------------------------------------------------------
+
+Variáveis
+--color-light: #FFFFFF;
+--color-orange: #E56C27;
+--font-body: 'Quicksand', sans-serif;
+--gradient: linear-gradient(45deg,
+        hsl(240deg 59% 15%) 0%,
+        hsl(241deg 62% 14%) 15%,
+        hsl(243deg 64% 14%) 37%,
+        hsl(245deg 67% 13%) 55%,
+        hsl(247deg 71% 12%) 69%,
+        hsl(249deg 76% 12%) 78%,
+        hsl(252deg 81% 11%) 86%,
+        hsl(254deg 87% 11%) 91%,
+        hsl(256deg 93% 10%) 96%,
+        hsl(258deg 100% 10%) 100%);
+
+https://www.joshwcomeau.com/gradient-generator/
+
+--------------------------------------------------------
+
+Ícones
+logo = <i class="bi bi-bag-heart"></i>
+menu = <i class="bi bi-filter-right"></i>
+wifi = <i class="bi bi-wifi"></i>
+mensagem = <i class="bi bi-chat-left-text"></i>
+saúde = <i class="bi bi-heart-pulse"></i>
+watch =  <i class="bi bi-smartwatch"></i>
