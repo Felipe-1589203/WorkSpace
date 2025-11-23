@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mais de 30.000 Prompts Prontos para suas Vendas, seu Conteúdo e seu Negócio</title>
+  <meta name="description"
+    content="Compre prompts prontos e profissionais para vendas, marketing, conteúdo, PLR e negócios digitais. Copiar, colar e lucrar." />
+
+  <style>
+    :root {
+      --bg: #060608;
+      --bg-alt: #0c0d10;
+      --card: #151821;
+      --primary: #f5c451;
+      --primary-dark: #e0ae30;
+      --text: #f5f5f5;
+      --muted: #a0a3b1;
+      --danger: #ff5252;
+      --border: #222534;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1a1d27 0, #050509 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(5, 5, 10, 0.95), rgba(5, 5, 10, 0.75), transparent);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff8dc 0, #f5c451 42%, #f59e0b 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(245, 196, 81, 0.6);
+      font-size: 0.9rem;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: color 0.18s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #1b1305;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: background 0.16s ease, transform 0.12s ease, box-shadow 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 0.8rem, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(21, 24, 33, 0.9);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #f5c451, #f59e0b);
+      color: #1f1305;
+      font-weight: 700;
+      font-size: 0.98rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+      transition: transform 0.12s ease, box-shadow 0.16s ease, filter 0.16s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.65);
+      filter: brightness(1.03);
+    }
+
+    .btn-ghost {
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(10, 11, 16, 0.9);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: border 0.16s ease, background 0.16s ease, color 0.16s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--primary);
+      color: var(--text);
+      background: rgba(15, 16, 22, 1);
+    }
+
+    .hero-note {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top, #1f2937 0, #050509 70%);
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .prompt-preview {
+      background: rgba(8, 9, 14, 0.9);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.9rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .prompt-preview span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 16, 22, 0.9);
+      border: 1px solid var(--border);
+    }
+
+    .hero-ribbon {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.1rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(2, 6, 23, 0.9);
+      border: 1px solid rgba(245, 196, 81, 0.5);
+      color: var(--primary);
+    }
+
+    /* Sections */
+    section {
+      margin: 2.4rem 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    /* BENEFÍCIOS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .benefit-card {
+      background: rgba(11, 12, 18, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      font-size: 0.9rem;
+    }
+
+    .benefit-icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .benefit-text {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* PACOTES */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .pack-card {
+      background: linear-gradient(145deg, #0c0d12, #050509);
+      border-radius: 20px;
+      padding: 1.1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+
+    .pack-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .pack-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .pack-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pack-list {
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .pack-list li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .pack-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .pack-price {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pack-price span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pack-btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      background: rgba(245, 196, 81, 0.1);
+      color: var(--primary);
+      font-size: 0.82rem;
+      cursor: pointer;
+      border: 1px solid rgba(245, 196, 81, 0.55);
+      white-space: nowrap;
+      transition: background 0.16s ease, transform 0.1s ease;
+    }
+
+    .pack-btn:hover {
+      background: rgba(245, 196, 81, 0.22);
+      transform: translateY(-1px);
+    }
+
+    /* Steps */
+    .steps {
+      background: radial-gradient(circle at top left, #111827 0, #020617 60%);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.4rem;
+    }
+
+    .steps-list {
+      counter-reset: step;
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .steps-list li {
+      position: relative;
+      padding-left: 2.2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .steps-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(5, 6, 12, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .steps-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .steps-right {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .steps-highlight {
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      border: 1px dashed rgba(245, 196, 81, 0.6);
+      background: rgba(15, 16, 22, 0.95);
+      margin-bottom: 0.8rem;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: rgba(10, 11, 16, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-a {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      margin-top: 1.5rem;
+      padding: 1.1rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(10, 11, 16, 0.95);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .contact-btn {
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border 0.16s ease, background 0.16s ease;
+    }
+
+    .contact-btn:hover {
+      border-color: var(--primary);
+      background: #020817;
+    }
+
+    footer {
+      margin-top: 2.2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .benefits-grid,
+      .packs-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* REVEAL EFFECT */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">VL</div>
+        <span>Veyra Logic AI</span>
+      </div>
+      <nav>
+        <a href="#packs">Pacotes</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#faq">Dúvidas</a>
+        <button class="nav-cta" onclick="document.getElementById('packs').scrollIntoView({behavior:'smooth'})">
+          Ver pacotes
+        </button>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero reveal">
+        <div>
+          <div class="hero-kicker">Prompts prontos para vender mais</div>
+          <h1 class="hero-title">
+            Prompts profissionais para você <span>vender e lucrar com IA</span> sem quebrar a cabeça.
+          </h1>
+
+          <p class="hero-sub">
+            Em vez de perder horas testando o que funciona, você recebe prompts prontos, organizados por objetivo:
+            vendas, conteúdo, tráfego, PLR e automação de tarefas.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge">Copiar, colar e usar</span>
+            <span class="badge">Foco em resultado, não em firula</span>
+            <span class="badge">Pensado para ChatGPT e outras IAs</span>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="document.getElementById('packs').scrollIntoView({behavior:'smooth'})">
+              Ver pacotes de prompts →
+            </button>
+
+            <button class="btn-ghost" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
+              Falar sobre um projeto específico
+            </button>
+          </div>
+
+          <p class="hero-note">
+            Primeiro você escolhe o pacote. Depois, se quiser, criamos prompts sob medida para o seu negócio.
+          </p>
+        </div>
+
+        <aside class="hero-right">
+          <div class="hero-ribbon">Pronto para vender</div>
+
+          <div class="hero-tag">Exemplo de prompt</div>
+
+          <h2 class="hero-card-title">Prompt para vender no WhatsApp</h2>
+
+          <p class="hero-card-sub">
+            Você recebe o texto pronto, só troca os dados do seu produto e dispara.
+          </p>
+
+          <div class="prompt-preview">
+            <span>[Prompt modelo]</span>
+            “Você é um especialista em vendas pelo WhatsApp. Crie uma mensagem direta e persuasiva para oferecer
+            <strong>[seu produto]</strong> para leads frios, em até 5 linhas, com foco em benefício, prova social e
+            chamada para ação clara.”
+          </div>
+
+          <div class="prompt-preview">
+            <span>[Saída esperada]</span>
+            A mensagem vem pronta para copiar e colar, com variações se você quiser testar versões diferentes.
+          </div>
+
+          <div class="hero-metrics">
+            <span class="hero-pill">Ideal para iniciantes</span>
+            <span class="hero-pill">Funciona em qualquer nicho</span>
+          </div>
+        </aside>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section id="beneficios" class="reveal">
+
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Por que comprar prompts prontos?</h2>
+          </div>
+
+          <p class="section-sub">
+            Você não precisa virar especialista em IA. Aqui a ideia é simples: ter comandos prontos e testados, que você
+            adapta e aplica na sua rotina.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">⏱️</div>
+            <h3 class="benefit-title">Você economiza tempo</h3>
+            <p class="benefit-text">
+              Sem ficar “mexendo” no prompt. Você parte de algo direto e eficaz.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h3 class="benefit-title">Você foca em vender</h3>
+            <p class="benefit-text">
+              Prompts orientados para conversão: mais leads, mais mensagens e mais vendas.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon">📚</div>
+            <h3 class="benefit-title">Você aprende na prática</h3>
+            <p class="benefit-text">
+              Ao usar os prompts, você entende a lógica e aprende a adaptar para qualquer projeto.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PACOTES -->
+      <section id="packs" class="reveal">
+        <div class="section-head">
+          <h2 class="section-title">Pacotes de prompts em destaque</h2>
+
+          <p class="section-sub">
+            Após aprovar o site, ajustamos juntos cada pacote para o seu público.
+          </p>
+        </div>
+
+        <div class="packs-grid">
+
+          <!-- PACK 1 -->
+          <article class="pack-card reveal">
+            <div>
+              <div class="pack-label">Vendas e WhatsApp</div>
+              <h3 class="pack-title">Pacote: Vendas no WhatsApp e Instagram</h3>
+
+              <p class="pack-desc">
+                Prompts focados em gerar conversas, propostas e fechamento rápido.
+              </p>
+
+              <ul class="pack-list">
+                <li>Mensagens iniciais para leads frios e mornos</li>
+                <li>Follow-up sem parecer chato</li>
+                <li>Textos de oferta direta</li>
+              </ul>
+            </div>
+
+            <div class="pack-footer">
+              <div class="pack-price">
+                R$ 99,99 <span>• acesso imediato</span>
+              </div>
+
+              <button class="pack-btn" onclick="window.location.href='pacote_vendas.html'">
+                Quero esse pacote
+              </button>
+            </div>
+          </article>
+
+          <!-- PACK 2 -->
+          <article class="pack-card reveal">
+            <div>
+              <div class="pack-label">Conteúdo diário</div>
+              <h3 class="pack-title">Pacote: Conteúdo por 30 dias</h3>
+
+              <p class="pack-desc">
+                Ideias, roteiros e posts para preencher um mês de conteúdo.
+              </p>
+
+              <ul class="pack-list">
+                <li>Posts educativos e de prova social</li>
+                <li>Roteiros curtos</li>
+                <li>Calendário mensal</li>
+              </ul>
+            </div>
+
+            <div class="pack-footer">
+              <div class="pack-price">
+                R$ 199,99 <span>• uso ilimitado</span>
+              </div>
+
+              <button class="pack-btn" onclick="window.location.href='pacote_conteudo.html'">
+                Quero esse pacote
+              </button>
+            </div>
+          </article>
+
+          <!-- PACK 3 -->
+          <article class="pack-card reveal">
+            <div>
+              <div class="pack-label">Negócios digitais</div>
+              <h3 class="pack-title">Pacote: PLR, SaaS e automações</h3>
+
+              <p class="pack-desc">
+                Prompts para criar produtos, estruturar ofertas e automatizar rotinas.
+              </p>
+
+              <ul class="pack-list">
+                <li>Prompts para criar e adaptar PLR</li>
+                <li>Prompts para páginas de vendas</li>
+                <li>Prompts para rotinas internas</li>
+              </ul>
+            </div>
+
+            <div class="pack-footer">
+              <div class="pack-price">
+                R$ 249,90 <span>• foco em escala</span>
+              </div>
+
+              <button class="pack-btn" onclick="window.location.href='pacote_plr.html'">
+                Quero esse pacote
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="como-funciona" class="reveal">
+        <div class="section-head">
+          <h2 class="section-title">Como funciona na prática</h2>
+
+          <p class="section-sub">
+            Você compra, recebe, aplica no dia a dia e ajusta conforme sua realidade.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <div>
+            <ol class="steps-list">
+              <li>Escolhe o pacote ideal.</li>
+              <li>Paga via Hotmart, Stripe, PIX, etc.</li>
+              <li>Recebe o arquivo na hora.</li>
+              <li>Copia e cola na IA.</li>
+              <li>Refina conforme o seu público.</li>
+            </ol>
+
+            <p class="steps-note">
+              Depois, se quiser subir de nível, criamos prompts sob medida.
+            </p>
+          </div>
+
+          <div class="steps-right">
+            <div class="steps-highlight">
+              <strong>Importante:</strong> você não compra textos prontos e sim <strong>comandos prontos</strong> para gerar infinitas versões.
+            </div>
+
+            <p>
+              Isso mantém o formato tradicional: você entrega algo concreto usando IA a seu favor.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="reveal">
+
+        <div class="section-head">
+          <h2 class="section-title">Dúvidas frequentes</h2>
+
+          <p class="section-sub">
+            Se faltar algo, me chama no WhatsApp ou e-mail.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+
+          <article class="faq-item">
+            <div class="faq-q">Preciso saber muito de IA?</div>
+            <div class="faq-a">Não. Só copiar, colar e trocar informações.</div>
+          </article>
+
+          <article class="faq-item">
+            <div class="faq-q">Funciona só no ChatGPT?</div>
+            <div class="faq-a">Não. Funciona em qualquer IA de texto.</div>
+          </article>
+
+          <article class="faq-item">
+            <div class="faq-q">Posso revender?</div>
+            <div class="faq-a">Uso pessoal. Para revenda, criamos um plano especial.</div>
+          </article>
+
+          <article class="faq-item">
+            <div class="faq-q">Como recebo?</div>
+            <div class="faq-a">Baixa via PDF, DOCX ou Notion.</div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="reveal">
+
+        <div class="section-head">
+          <h2 class="section-title">Quer algo feito sob medida?</h2>
+
+          <p class="section-sub">
+            Se você já vende algo, criamos prompts exclusivos para o seu negócio.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            Me diga:
+            <strong>o que você vende</strong> e
+            <strong>o que quer melhorar com IA</strong>.
+          </div>
+
+          <div class="contact-actions">
+            <a href="https://wa.me/5511941243455" target="_blank" class="contact-btn">
+              WhatsApp
+            </a>
+
+            <a href="mailto:felipe_135791@hotmail.com" class="contact-btn">
+              E-mail
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> PromptStore • Prompts prontos para negócios reais.</span>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // OBSERVER PARA ANIMAÇÃO
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>
